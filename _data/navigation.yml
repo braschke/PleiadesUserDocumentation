@@ -1,0 +1,17 @@
+- title: Home
+  url: /
+- title: Introduction
+  url: /introduction
+- title: Best Practices
+  url: /bestpractice
+- title: Slurm
+  url: /slurm
+- title: Software
+  url: /software
+  sublinks:
+    - title: Software Modules
+      url: /software/modules
+    - title: PGI
+      url: /software/pgi
+    - title: Intel
+      url: /software/intel
