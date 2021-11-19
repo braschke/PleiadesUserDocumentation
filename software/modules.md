@@ -2,6 +2,8 @@
 title: "Software Modules"
 ---
 
+**We are still in the process of testing the software modules. Please let us know if something does not work as intended.**
+
 ### Software Modules
 We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users.
 After login, you can use the `module` command to find and load software:
