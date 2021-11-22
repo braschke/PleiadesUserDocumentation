@@ -8,15 +8,12 @@
     {% endif %}
 {% endfor %}
 
-<!-- Then we build the nav bar. -->
 <nav>
-    <ul>
+    <ul style="position: unset">
     {% for entry in site.data.navigation %}
         {% if entry.url == current_page %}
-            <!-- uses yellow, you can change to any other hexadecimal colour code. -->
             {% assign current = ' style="background-color: #FF000"' %}
         {% else %}
-            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
             {% assign current = null %}
         {% endif %}
         {% assign sublinks = entry.sublinks %}
