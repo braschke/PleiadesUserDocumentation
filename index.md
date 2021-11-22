@@ -12,7 +12,9 @@ There is 931 TB of parallel storage (BeeGFS).
 
 ![The PLEIADES Cluster](assets/img/cluster.jpg)
 
-In case of further questions you can contact us at lcg-admin{at}physik.uni-wuppertal.de
+In case of further questions you can contact us at
+
+**lcg-admin{at}physik.uni-wuppertal.de**
 
 More resources:
   - [Official PLEIADES page](http://pleiades.uni-wuppertal.de/)
