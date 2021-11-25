@@ -50,8 +50,8 @@ Please consider if the version of the operating system (here centos7) matches th
 
 
 ### Other software
-Please have a look at the [PGI user guide](/software/pgi) to learn how to use the PGI compiler tools on Pleiades.
-Additionally, you have access to many of tools of [Intels parallel studio XE 2020](/software/intel) by sourcing
+Please have a look at the [PGI user guide]({{ site.baseurl }}{% link software/pgi.md %}) to learn how to use the PGI compiler tools on Pleiades.
+Additionally, you have access to many of tools of [Intels parallel studio XE 2020]({{ site.baseurl }}{% link software/intel.md %}) by sourcing
 
 ```bash
 source /beegfs/Tools/intel/setup.sh
