@@ -7,7 +7,7 @@ title: "Software Modules"
 ### Software Modules
 We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users.
 After login, you can use the `module` command to find and load software:
-```bash
+```
 $ module --help
 Usage: module [options] sub-command [args ...]
 
@@ -19,7 +19,7 @@ Options:
 ```
 
 For example, if you need a recent version of GCC and CMake and want to see available versions, you can execute:
-```bash
+```
 $ module spider GCC CMake
 -------------------------------------------------------------------------------
   GCC:
@@ -63,7 +63,7 @@ $ module spider GCC CMake
 ```
 
 Use the specific versions of GCC and CMake, to see details on how to load these modules:
-```bash
+```
 $ module spider GCC/10.3.0 CMake/3.20.1
 
 -------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ $ module spider GCC/10.3.0 CMake/3.20.1
 ```
 
 To finally load the software you can call `module load 2021a GCC/10.3.0 CMake/3.20.1`:
-```bash
+```
 $ gcc --version
 gcc (GCC) 10.3.0
 Copyright (C) 2020 Free Software Foundation, Inc.

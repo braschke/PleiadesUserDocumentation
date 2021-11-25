@@ -6,6 +6,8 @@
   url: /bestpractice
 - title: Slurm
   url: /slurm
+- title: Using GPUs
+  url: /gpu
 - title: Software
   url: /software
   sublinks:
