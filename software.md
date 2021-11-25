@@ -3,7 +3,7 @@ title: "Software on Pleiades"
 ---
 
 ### Modules
-We offer many software installations through [modules](/software/modules).
+We offer many software installations through [modules]({{ site.baseurl }}{% link software/modules.md %}).
 There are also alternative, as described below.
 
 
