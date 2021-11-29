@@ -11,6 +11,7 @@ Each node has the following specs:
   - 8 GPUs: NVidia HGX A100
   - 128 Cores: Two sockets with AMD EPYC 7763 64-Core Processors each
   - 2TB Memory, resulting in 16GB per core
+  - 14TB of disk space at `/data/`. Please clean up your data when you are done
 
 Certain cores are associated to a certain GPU and can check the affinity between them with `nvidia-smi`:
 ```
