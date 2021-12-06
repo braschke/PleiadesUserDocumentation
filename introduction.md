@@ -84,3 +84,11 @@ and
 ```
 
 This can easily be achieved by copying the whole directory.
+
+
+### Hardware and Network
+The CPU Worker nodes wn21[001-232] are connected to each other and to the BeeGFS servers via infiniband and ethernet.
+All GPU nodes (gpu21[001-005]) are in a separate infiniband network and access BeeGFS via ethernet.
+The login nodes are currently connected to all other nodes via ethernet.
+
+![Hardware and network layout of PLEIADES](assets/img/pleiades_layout.jpg)
