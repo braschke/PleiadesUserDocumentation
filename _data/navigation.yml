@@ -17,3 +17,5 @@
       url: /software/pgi
     - title: Intel
       url: /software/intel
+- title: Zabbix Monitoring
+  url: /zabbix
