@@ -8,6 +8,7 @@ On this page you can find an introduction to our cluster, as well as answers to 
 
 The cluster consists of 232 workernodes, with 2 AMD EPYC 7452 CPUs each. With 32 cores per CPU, there are 14848 Cores in total.
 Each node has 256 GB of memory.
+Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 2 AMD EPYC 7763 64-Core CPUs each.
 There is 931 TB of parallel storage (BeeGFS).
 
 ![The PLEIADES Cluster](assets/img/cluster.jpg)
