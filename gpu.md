@@ -60,7 +60,6 @@ As you can see in `AllowAccounts`, we only allow a special purpose Slurm account
 Every user is associated to their groups account **and** a corresponding `_gpu` account.
 This way we can have separate fairshare configurations between CPU resources and GPU resources, which might be necessary to prioritize research groups with a larger demand for GPU resources.
 You can check the current share distribution with `sshare` yourself.
-**At the moment, every group has the same relative share. We are still in the process of defining and configuring the fair shares and this is likely to change in the future**
 
 Slurm treats GPUs as consumable resources and you must specify how many GPUs you would like to request for your job with `--gpus 8`.
 Additionally you should decide how many tasks (e.g. processes, option `-n`) you plan to run on a given node and how many `--gpus-per-task` and `--cpus-per-task` you require.
