@@ -8,6 +8,8 @@
   url: /slurm
 - title: Using GPUs
   url: /gpu
+- title: MPI on Pleiades
+  url: /mpi
 - title: Software
   url: /software
   sublinks:
