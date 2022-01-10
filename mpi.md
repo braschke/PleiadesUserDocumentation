@@ -78,4 +78,4 @@ It is possible to pass `--mca` options in these commands as well.
 ### Additional Resources
 - Use `srun --cpu-bind=help` to show available options to bind CPU resources managed by Slurm to your (MPI-)processes
 - `srun --mpi=list` provides a list available MPI interfaces of Slurm
-- https://slurm.schedmd.com/mpi_guide.html
+- [Slurm MPI documentation](https://slurm.schedmd.com/mpi_guide.html)
