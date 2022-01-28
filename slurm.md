@@ -2,6 +2,8 @@
 title: "Slurm"
 ---
 
+## Slurm
+
 This is a small getting-started guide about submitting batch jobs with Slurm on the new Pleiades cluster.
 
 
@@ -37,8 +39,10 @@ $ cat testjob.sh
 #SBATCH --nodes=4-10 # at least 4 nodes, up to 10
 #SBATCH --mem-per-cpu=128 # in MB
 srun hostname | sort
+
 $ sbatch testjob.sh
 Submitted batch job 106867
+
 $ cat slurm-106867.out
 wn21001.pleiades.uni-wuppertal.de
 wn21002.pleiades.uni-wuppertal.de
@@ -82,10 +86,9 @@ $ cd /beegfs/<userfolder>
 ```
 
 More information about running MPI jobs on Slurm is available at:
--   [https://slurm.schedmd.com/mpi_guide.html#open_mpi](https://slurm.schedmd.com/mpi_guide.html#open_mpi)
--   [https://www.open-mpi.org/faq/?category=slurm](https://www.open-mpi.org/faq/?category=slurm)
-
-Please note, that we plan to centrally provide modules for commonly used software, e.g. MPI and compilers, at a later time, such that you won't have to compile these things for yourself anymore.
+- [MPI on Pleiades]({{ site.baseurl }}{% link mpi.md %})
+- [https://slurm.schedmd.com/mpi_guide.html#open_mpi](https://slurm.schedmd.com/mpi_guide.html#open_mpi)
+- [https://www.open-mpi.org/faq/?category=slurm](https://www.open-mpi.org/faq/?category=slurm)
 
 A single Slurm job can consist of multiple steps. In this case, the salloc command is used to allocate a fixed set of resources and then run multiple "srun -r ..." commands to schedule job steps on these resources:
 
@@ -133,6 +136,7 @@ It is also possible to build dependencies between Slurm jobs via the "sbatch --d
 - **squeue** - See all running and pending jobs.
 - **scancel** - Cancel a specific job
 - **sshare** - See current fair share and cluster usage
+- **sacct** - Show information about past jobs
 
 
 ### Singularity and Slurm

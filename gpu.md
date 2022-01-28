@@ -2,6 +2,8 @@
 title: "Job Submission with GPUs"
 ---
 
+## Job Submission with GPUs
+
 This guide is introducing our newly available GPU nodes.
 The configuration is still very fresh, so please contact us if there are problems or if you expect something to behave differently.
 

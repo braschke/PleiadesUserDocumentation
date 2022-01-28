@@ -1,6 +1,7 @@
 ---
 title: "Software on Pleiades"
 ---
+## Software on Pleiades
 
 ### Modules
 We offer many software installations through [modules]({{ site.baseurl }}{% link software/modules.md %}).
