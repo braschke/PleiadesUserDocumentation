@@ -177,6 +177,8 @@ FFTW               gzip                   libglvnd         nsync          Scalas
 ```
 
 We build the software stacks with [EasyBuild](https://docs.easybuild.io/en/latest/).
+All modules have been built on our [wn21]({{ site.baseurl }}{% link hardware.md %}) nodes and therefore optimized for the AMD Rome architecture.
+
 If you are missing a software, please check if it is available in [EasyBuilds list of supported software](https://docs.easybuild.io/en/latest/version-specific/Supported_software.html#list-software).
 In this case it might be trivial for us to provide it as well.
 Otherwise, we hope you understand that building unsupported software may require some time or might not be feasible for us.

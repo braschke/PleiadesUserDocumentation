@@ -2,6 +2,8 @@
   url: /
 - title: Introduction
   url: /introduction
+- title: Hardware
+  url: /hardware
 - title: Best Practise
   url: /bestpractice
 - title: Slurm

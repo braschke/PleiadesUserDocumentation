@@ -6,10 +6,8 @@ layout: default
 Welcome to the user documentation of the PLEIADES cluster at the University of Wuppertal.
 On this page you can find an introduction to our cluster, as well as answers to common questions and best practices.
 
-The cluster consists of 232 workernodes, with 2 AMD EPYC 7452 CPUs each. With 32 cores per CPU, there are 14848 Cores in total.
-Each node has 256 GB of memory.
-Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 2 AMD EPYC 7763 64-Core CPUs each.
-There is 931 TB of parallel storage (BeeGFS).
+If you are a new user, please read our [introduction]({{ site.baseurl }}{% link introduction.md %}), the [hardware description]({{ site.baseurl }}{% link hardware.md %}) and about [best practice]({{ site.baseurl }}{% link bestpractice.md %}).
+There is also more information about Slurm, using GPU nodes, MPI and available Software.
 
 ![The PLEIADES Cluster](assets/img/cluster.jpg)
 
