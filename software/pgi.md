@@ -1,7 +1,7 @@
 ---
 title: "PGI"
 ---
-**PGI is succeeded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
+**PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
 
 ## PGI
 PGI provides tools to develop programs in a heterogeneous environment (CPUs & GPUs):

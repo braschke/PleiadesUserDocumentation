@@ -21,5 +21,7 @@
       url: /software/pgi
     - title: Intel
       url: /software/intel
+    - title: Singularity
+      url: /software/singularity
 - title: Zabbix Monitoring
   url: /zabbix

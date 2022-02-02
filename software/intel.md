@@ -1,15 +1,14 @@
 ---
-title: "Intel"
+title: "Intel Parallel Studio XE 2020"
 ---
 
-## Intel
+**Parallel studio is superseded by oneAPI modules** Example modules are: `intel-compilers`, `impi`, `imkl`, `VTune`
 
-Work in progress.
-
-But you can use Intel Parallel Studio XE 2020 through
+## Intel Parallel Studio XE 2020
+The Intel Parallel Studio XE 2020 environment is set up via 
 
 ```bash
 source /beegfs/Tools/intel/setup.sh
 ```
 
-**OR** load individual Intel oneAPI components through the [module system]({{ site.baseurl }}{% link software/modules.md %}).
+This provides Intel compilers, MPI, MKL and many analysis tools, e.g. Advisor or VTune.

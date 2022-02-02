@@ -198,3 +198,21 @@ Here, the whole software stack is built with `RPATH`, i.e. lookup paths of libra
 There are a couple of drawbacks though:
   - The `2021a-rpath` stack is not necessarily suited to build your own software, e.g. by loading GCC and CMake. In this case you would have to consider using RPATH in your build as well. For simplicity, try to use the `-rpath` stack only if you intend to use the application, but not build further software against it.
   - The `2021a`(`-norpath`) and `2021a-rpath` stack might be out of sync. Please tell us if you need a certain module that is available in one, but no the other.
+
+
+## Alternative to Modules: LCG
+The SFT project at CERN provides multiple LCG releases that bundle many useful software packages. This also contains different versions of the gcc or clang compilers. If CVMFS is available, you can set up a specific release via
+
+```bash
+source /cvmfs/sft.cern.ch/lcg/views/LCG_99/x86_64-centos7-gcc8-opt/setup.sh
+```
+
+CVMFS is available on all login and worker nodes of Pleiades.
+
+If you are only interested in a single tool, e.g. gcc, you can source the corresponding setup.sh, e.g. in
+
+```bash
+/cvmfs/sft.cern.ch/lcg/releases/gcc/8.1.0/x86_64-centos7/setup.sh
+```
+
+Please check if the version of the operating system (here centos7) matches the architecture in that path. For more info refer to the [LCG info web page](https://ep-dep-sft.web.cern.ch/document/lcg-releases) or the README files in /cvmfs/sft.cern.ch/lcg/

@@ -1,61 +1,28 @@
 ---
 title: "Software on Pleiades"
 ---
+
 ## Software on Pleiades
-
-### Modules
 We offer many software installations through [modules]({{ site.baseurl }}{% link software/modules.md %}).
-There are also alternative, as described below.
+Alternatively, you can source an LCG release, as described on the module page.
+Finally, you can use [Singularity]({{ site.baseurl }}{% link software/singularity.md %}) to set up a specific software environment by running your job in a container.
 
-
-### Different compiler versions using singularity
-The container management program singularity is installed on the system. If you need a different compiler version in order to be able to compile your program, you can download them as an image from the docker hub by using the command
-
-```bash
-singularity pull docker://gcc:<version>
-```
-
-This will create a .sif file in your current directory. You can then use the command
-
-```bash
-singularity shell <your-.sif-file>
-```
-
-to get an interactive shell using the specified compiler version. Compile your program in the way you need to and log out of the container in the usual way.
-
-
-### Singularity and MPI
-Singularity can be used to execute mpi-processes in a container. This can be done by using
-
-```bash
-mpirun singularity exec <your-.sif-file> </path/to/program> 
-```
-
-Note the order of calling mpi and singularity. Singularity will connect the mpi runtime environment on the host system with the mpi processes in the container.
-
-
-### Use LCG software environments for different compiler versions
-The SFT project provides multiple LCG releases that bundle many very useful software packages. This also contains different versions of the gcc or clang compiler. If CVMFS is available, you can set up a specific release via
-
-```bash
-source /cvmfs/sft.cern.ch/lcg/views/LCG_99/x86_64-centos7-gcc8-opt/setup.sh
-```
-
-If you are only interested in a single tool, e.g. gcc, you can source the corresponding setup.sh, e.g. in
-
-```bash
-/cvmfs/sft.cern.ch/lcg/releases/gcc/8.1.0/x86_64-centos7/setup.sh
-```
-
-Please consider if the version of the operating system (here centos7) matches the architecture in that path. For more info refer to the LCG info web page or the README files in /cvmfs/sft.cern.ch/lcg/
-
-
-### Other software
-Please have a look at the [PGI user guide]({{ site.baseurl }}{% link software/pgi.md %}) to learn how to use the PGI compiler tools on Pleiades.
-Additionally, you have access to many of tools of [Intels parallel studio XE 2020]({{ site.baseurl }}{% link software/intel.md %}) by sourcing
-
-```bash
-source /beegfs/Tools/intel/setup.sh
-```
-
-This contains compilers, MPI, libraries and profiling tools like VTune Amplifier, Advisor, etc.
+### List of Special Software
+  - CUDA
+    - `module load 2021a CUDA/11.4.2`
+  - NVHPC
+    - `module load 2021a NVHPC/21.7`
+  - TotalView: Debugger and analyzer
+    - `module load 2021a TotalView/2021.3.9`
+  - ARMForge: Debugger and analyzer
+    - `module load 2021a ARMForge/21.1.1`
+  - NAG Library through modules `NAG` and `NAGfor`
+    - `module load 2021a intel-compilers/2021.2.0 NAG/27.3.0`
+    - `module load 2021a NAGfor/7.1.01`
+  - [Intels parallel studio XE 2020]({{ site.baseurl }}{% link software/intel.md %})
+    - Contains compilers, MPI, libraries and profiling tools like VTune Amplifier, Advisor, etc.
+    - **Parallel studio is superseded by oneAPI modules** Example modules: `intel-compilers`, `impi`, `imkl`, `VTune`
+  - [PGI]({{ site.baseurl }}{% link software/pgi.md %})
+    - Collection of special purpose compilers for heterogeneous environments (CPUs & GPUs)
+    - **PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
+  - COMSOL 6, limited to certain groups
