@@ -121,7 +121,7 @@ yum-plugin-nvidia.noarch               0.5-1.el7                       @local-ce
 Additionally, you can try some of the available [modules]({{ site.baseurl }}{% link software/modules.md %}) with GPU related features:
   - `CUDA/11.4.2`
   - `NVHPC/21.7`: The successor of the PGI compilers
-  - Various debuggers and profilers, e.g. `TotalView/2021.3.9` and `ARMForge/21.1.1`, as well as [Intel parallel studio XE]({{ site.baseurl }}{% link software/intel.md %}) (planning to provide oneAPI as well)
+  - Various debuggers and profilers, e.g. `TotalView/2021.3.9` and `ARMForge/21.1.1`, as well as Intel parallel studio XE
   - `TensorFlow/2.6.0`
 
 In all of these cases you would run `module load 2021a <module/version>` in your `sbatch` job script or your interactive `salloc`/`srun` allocation to gain access to the corresponding tools.

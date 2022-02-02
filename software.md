@@ -19,7 +19,7 @@ Finally, you can use [Singularity]({{ site.baseurl }}{% link software/singularit
   - NAG Library through modules `NAG` and `NAGfor`
     - `module load 2021a intel-compilers/2021.2.0 NAG/27.3.0`
     - `module load 2021a NAGfor/7.1.01`
-  - [Intels parallel studio XE 2020]({{ site.baseurl }}{% link software/intel.md %})
+  - Intel parallel studio XE 2020
     - Contains compilers, MPI, libraries and profiling tools like VTune Amplifier, Advisor, etc.
     - **Parallel studio is superseded by oneAPI modules** Example modules: `intel-compilers`, `impi`, `imkl`, `VTune`
     - Set up with `source /beegfs/Tools/intel/setup.sh`
