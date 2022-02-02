@@ -3,10 +3,9 @@ title: "Hardware"
 ---
 
 ## Hardware
-The cluster consists of 232 workernodes, with , there are 14848 Cores in total.
-Each node has 256 GB of memory.
-Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 2 AMD EPYC 7763 64-Core CPUs each.
-There is 931 TB of parallel storage (BeeGFS).
+The cluster consists of 232 workernodes with 14848 Cores in total.
+Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
+931 TB of parallel storage are provided with BeeGFS.
 
 
 ### Node Types
