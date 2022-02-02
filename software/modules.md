@@ -4,6 +4,9 @@ title: "Software Modules"
 
 ## Software Modules
 We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users.
+Please have a look at the [LMod user guide](https://lmod.readthedocs.io/en/latest/010_user.html).
+
+### Finding Modules
 After login, you can use the `module` command to find and load software:
 ```
 $ module --help
@@ -131,7 +134,7 @@ $ which cmake
 You would use such a `module load` command, whenever you prepare your environment for interactive work, as well as in batch job scripts.
 
 
-### Background Information
+### Background Information: Hierarchical Naming Scheme
 The module visibility is following a hierarchical naming scheme.
 It means that software only becomes visible to the `module available` command, after it's dependencies are loaded.
 `2021a` represents a "meta module", acting as an entry point into a given version of the software stack.
@@ -176,6 +179,7 @@ FFmpeg             GTK3                   libGLU           NSS            ScaLAP
 FFTW               gzip                   libglvnd         nsync          Scalasca
 ```
 
+### Background Information: Module Build
 We build the software stacks with [EasyBuild](https://docs.easybuild.io/en/latest/).
 All modules have been built on our [wn21]({{ site.baseurl }}{% link hardware.md %}) nodes and therefore optimized for the AMD Rome architecture.
 
