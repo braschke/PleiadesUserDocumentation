@@ -23,7 +23,7 @@ There is 931 TB of parallel storage (BeeGFS).
   - 2 sockets with AMD EPYC 7763 64-Core processor. 128 Cores in total
   - Hyperthreading disabled
   - 2TB memory, 16GB per thread
-  - More details here: [Using GPUs]({{ site.baseurl }}{% link software/gpu.md %})
+  - More details here: [Using GPUs]({{ site.baseurl }}{% link gpu.md %})
 - **wn19[01-08]**: Intel(R) Xeon(R) Gold 6152 CPU @ 2.10GHz
   - Hyperthreading **enabled**
   - 176GB memory, 2GB per thread
