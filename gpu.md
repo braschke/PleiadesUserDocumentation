@@ -75,6 +75,22 @@ To summarize, whenever you intend to submit a job with GPU resources, consider t
   - `--gpus-per-task <N>` to set the number of GPUs to be used in a single process/task (up to 8)
   - `--cpus-per-task <N>` to set the number of CPU cores in a single task (up to 128 per node)
 
+Here is an example job script, submitting 8 processes, each with 16 cores and one GPU to a single node:
+```
+#!/bin/sh
+#SBATCH --job-name=gputests
+#SBATCH --partition=gpu
+#SBATCH --account=<groupname>_gpu
+#SBATCH -N 1
+#SBATCH --ntasks 8
+#SBATCH --cpus-per-task 16
+#SBATCH --gpus-per-task 1
+#SBATCH --time=0-01:00:00
+#SBATCH -o %x-%j.out
+
+srun -n8 nvidia-smi topo -m
+```
+
 
 ### Software
 Some basic packages are installed on all GPU nodes:
