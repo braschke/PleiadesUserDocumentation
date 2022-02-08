@@ -5,25 +5,18 @@ title: "MPI on PLEIADES"
 ## MPI on Pleiades
 There are multiple MPI environments available:
 1. OpenMPI4: `module load 2021a GCC/10.3.0 OpenMPI/4.1.1`
-1. Intel MPI: `module load 2021a iimpi/2021a` or [through Parallel Studio](software/intel)
+1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or [through Parallel Studio](software/intel) (Version from 2020)
 1. Local package OpenMPI3 in `/lib64/openmpi3` on our worker nodes
 1. Compiling your own MPI libraries
 
-If you need more information about the locally installed OpenMPI3 version, you can look around a worker node by
-```bash
-# Look into local openmpi3 manually on WN
-$ salloc -N1 -n1
-$ ssh wn21123 # replace with correct wn number of your interaction session
-$ yum info openmpi3
-$ ls /lib64/openmpi3
-$ <ctrl-d to exit salloc>
-```
+All MPI versions were tested on Pleiades with an MPI benchmark.
+These tests covered the mpirun and srun approach (see below), as well as ethernet and infiniband communication.
 
-Alternatively, if you are just interested in file locations:
-```bash
-$ srun -N1 -n1 tree /lib64/openmpi3 | less
-```
+Many problems with MPI are caused by a mismatch between the applications expected MPI version/configuration and the used MPI version in your environment.
+If you experience problems, try a clean build and investigate MPI related options during your application build and at runtime.
 
+
+### PMI Library
 The PMI library acts as an interface between Slurm and various MPI versions.
 This way Slurm can manage MPI processes, if the MPI library has been compiled correctly, e.g. by using `--with-pmi` and `--with-slurm`.
 If you intend to compile your own MPI versions, you may have to mention the location of PMI libraries:
@@ -43,21 +36,27 @@ If you intend to compile your own MPI versions, you may have to mention the loca
 /lib64/libpmix.so.2
 ```
 
+These paths may also become relevant if you use Intel MPI.
+
 
 ###  Using MPI in Slurm Jobs
 There are two approaches to use MPI in your Slurm batch scripts:
-1. `srun --mpi=pmix_v3`
+1. `srun`
 2. `mpirun`
 
-`srun --mpi=pmix_v3` may require your software to be build against PMIx, available as mentioned above.
-The option `--mpi=pmix_v3` is optional, since it is assumed by default.
+`srun` is by default executing `srun --mpi=pmix_v3`, which may require your software to be build against PMIx, available as mentioned above.
+Alternative PMI options can be listed with `srun --mpi=list`
 
-Applications that implicitly ship MPI may need additional configuration.
-The application may want to do its own resource management and might need informations about PMI libraries or Slurm itself.
+Applications that implicitly ship MPI may need additional configuration, e.g. enabling slurm support or pointing to PMI libraries.
 This is a case-by-case situation where you should study the corresponding documentation of your application.
 
+Consider reading the [Slurm MPI documentation](https://slurm.schedmd.com/mpi_guide.html).
 
-#### Example Job Script
+Deciding on the number of nodes, processes and cores per process can confusing sometimes.
+Use `srun --cpu-bind=help` to show available options to bind CPU resources managed by Slurm to your (MPI-)processes and have a look at the [Slurm CPU Management guide](https://slurm.schedmd.com/cpu_management.html).
+
+
+### Example Job Script with OpenMPI 4
 ```bash
 #!/bin/bash
 
@@ -78,7 +77,46 @@ mpirun /path/to/mpiapplication <arguments>
 It is possible to pass `--mca` options in these commands as well.
 
 
-### Additional Resources
-- Use `srun --cpu-bind=help` to show available options to bind CPU resources managed by Slurm to your (MPI-)processes
-- `srun --mpi=list` provides a list available MPI interfaces of Slurm
-- [Slurm MPI documentation](https://slurm.schedmd.com/mpi_guide.html)
+### Notes on Intel MPI
+```bash
+#!/bin/bash
+
+#SBATCH -p short
+#SBATCH -t 60
+#SBATCH -N 4 # 4 Nodes
+#SBATCH -n 4 # 4 processes in total
+
+# Chose ONE of the following:
+# Use recent version of oneAPI impi
+module load 2021a iimpi/2021a
+# Alternatively use impi shipped with Parallel Studio 2020
+source /beegfs/Tools/intel/setup.sh
+
+# Tell impi where to pick up the PMI library, paths above.
+# Maybe try libpmix.so or libpmi2.so, if you have problems
+export I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so
+
+# Option one:
+srun --mpi=pmix_v3 /path/to/mpiapplication <arguments>
+# Or using mpirun directly:
+mpirun /path/to/mpiapplication <arguments>
+# Third option through the hydra process manager
+mpiexec.hydra -bootstrap slurm -n <num_procs> /path/to/mpiapplication <arguments>
+```
+
+
+### Local OpenMPI 3
+If you need more information about the locally installed OpenMPI 3 version, you can look around a worker node by
+```bash
+# Look into local openmpi3 manually on WN
+$ salloc -N1 -n1
+$ ssh wn21123 # replace with correct wn number of your interaction session
+$ yum info openmpi3
+$ ls /lib64/openmpi3
+$ <ctrl-d to exit salloc>
+```
+
+Alternatively, if you are just interested in file locations:
+```bash
+$ srun -N1 -n1 tree /lib64/openmpi3 | less
+```
