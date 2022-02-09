@@ -15,6 +15,12 @@ There are a couple of things you should avoid when working on `/beegfs`, because
   * If you want to store logfiles etc., consider packing everything in a `.tar` file, since a single large file is better to digest on a parallel filesystem than many small files
   * If you use /tmp in your jobs, please make sure that you clean up the directories you created. Also consider what happens to these files, if your job gets canceled or crashes.
 
+If your job is aborted for any reason, you probably left files in `/tmp` that you want to rescue or remove.
+Right now, the best approach is to book an interactive shell on the node and resolve it manually, via:
+```bash
+srun -p short -w wn21053 -n1 -t 60 --pty /bin/bash
+```
+
 
 ### Slurm
 Every job submission in Slurm introduces some overhead to the batch system.
