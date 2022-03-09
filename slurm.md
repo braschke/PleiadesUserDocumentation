@@ -126,10 +126,6 @@ This way a fair usage of the resources is ensured, while still utilizing idle cy
 
 The fair share factor will recover with a half-life of 7 days and all fair share factors are reset at the beginning of the month.
 
-For example, you could use this to execute multiple (different) operations and finally do some clean-up, e.g. to leave your /beegfs area in a consolidated state.
-
-It is also possible to build dependencies between Slurm jobs via the "sbatch --dependency=<dependency_list>" option (also see man sbatch). But a single job with multiple steps has less overhead than multiple jobs and is therefore preferred!
-
 
 ### Useful commands
 - **sinfo** - Show current state of worker nodes

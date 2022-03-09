@@ -10,15 +10,17 @@ Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
 
 ### Node Types
 - **Login**: 
-  - `fugg1`: Virtual machine on Intel Xeon Gold 6238R CPUs
+  - `fugg1` and `fugg2`: Virtual machine on Intel Xeon Gold 6238R CPUs
     - The fugg login nodes are intended for job submission and light interactive workloads.
     - Because of architecture differences and limited resources, you should try to compile your programs through our batch system or work in interactive slurm sessions.
+    - `fugg2` has infiniband-enabled access to BeeGFS
   - `top` and `higgs` (only available to whep users)
 - **wn21[001-232]**: 
   - 2 sockets with AMD EPYC 7452 32-Core processor. 64 Cores in total
   - Hyperthreading disabled
   - 256GB memory, 4GB per thread
 - **gpu21[001-005]**:
+  - 8 GPUs: NVidia HGX A100
   - 2 sockets with AMD EPYC 7763 64-Core processor. 128 Cores in total
   - Hyperthreading disabled
   - 2TB memory, 16GB per thread
