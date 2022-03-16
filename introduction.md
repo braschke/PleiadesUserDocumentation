@@ -27,10 +27,11 @@ command.
 
 
 ### Login (all users except "whep" users)
-There is one login machine from which the cluster can be operated. It is:
+There are two login machine from which the cluster can be operated. They are:
 
 ```
 fugg1.pleiades.uni-wuppertal.de
+fugg2.pleiades.uni-wuppertal.de
 ```
 
 This node can be used to develop and test code. Once this is finished jobs can be submitted to the pleiades cluster. This machine runs CentOS 7. You can login on it using your username, which will be provided by us.
