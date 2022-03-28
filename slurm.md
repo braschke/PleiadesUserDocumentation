@@ -12,7 +12,7 @@ Previously, we used SGE to submit batch jobs.
 Since many concepts are similar between these kind of tools, you just have to look up the new tool names in many cases. This [rosetta stone](https://slurm.schedmd.com/rosetta.pdf), provided by schedmd is a good starting point.  
 A more general introduction to slurm is available at [slurm.schedmd.com/quickstart.html](https://slurm.schedmd.com/quickstart.html).
 
-In the remainder of this article, we will touch on some of the details of the current Slurm configuration. Keep in mind, that we are still tuning the setup, so some details might change in the coming weeks/months. If you have any questions or suggestions, do not hesitate to contact us via [lcg-admin{at}physik.uni-wuppertal.de](javascript:linkTo_UnCryptMailto('nbjmup+mdh.benjoAqiztjl\/voj.xvqqfsubm\/ef');)
+In the remainder of this article, we will touch on some of the details of the current Slurm configuration. Keep in mind, that we are still tuning the setup, so some details might change in the coming weeks/months.
 
 
 ### Submitting jobs
