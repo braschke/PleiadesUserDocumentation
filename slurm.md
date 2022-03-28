@@ -5,23 +5,20 @@ title: "Slurm"
 ## Slurm
 
 This is a small getting-started guide about submitting batch jobs with Slurm on the new Pleiades cluster.
-
-
-### Overview
-Previously, we used SGE to submit batch jobs.  
-Since many concepts are similar between these kind of tools, you just have to look up the new tool names in many cases. This [rosetta stone](https://slurm.schedmd.com/rosetta.pdf), provided by schedmd is a good starting point.  
 A more general introduction to slurm is available at [slurm.schedmd.com/quickstart.html](https://slurm.schedmd.com/quickstart.html).
 
-In the remainder of this article, we will touch on some of the details of the current Slurm configuration. Keep in mind, that we are still tuning the setup, so some details might change in the coming weeks/months.
 
+### Coming from SGE
+Previously, we used SGE to submit batch jobs.  
+Since many concepts are similar between these kind of tools, you just have to look up the new tool names in many cases. This [rosetta stone](https://slurm.schedmd.com/rosetta.pdf), provided by SchedMD is a good starting point.  
 
 ### Submitting jobs
 There are three login nodes available to submit jobs to the worker nodes: **higgs**, **top** and **fugg1**.
 Jobs can run in one out of three partitions, namely:
 - **normal** (default), with a time limit of 3 days
 - **short**, intended for development and tests, with a time limit of 1 hour
-- **long**, with a default time limit of 7 days. Only 30 nodes at a time are allowed to execute in this partition.
-- **gpu**, with a default time limit of 3 days. See [Using GPUs](gpu) for more information on how to submit jobs with GPU resources
+- long, with a default time limit of 7 days. Only 30 nodes at a time are allowed to execute in this partition.
+- **gpu**, with a time limit of 3 days. See [Using GPUs](gpu) for more information on how to submit jobs with GPU resources
 
 Think of partitions as a set of worker nodes, which are available to execute your jobs.
 
