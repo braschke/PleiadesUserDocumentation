@@ -6,7 +6,7 @@ layout: default
 Welcome to the user documentation of the PLEIADES cluster at the University of Wuppertal.
 On this page you can find an introduction to our cluster, as well as answers to common questions and best practices.
 
-If you are a new user, please read our [introduction]({{ site.baseurl }}{% link introduction.md %}), the [hardware description]({{ site.baseurl }}{% link hardware.md %}) and about [best practice]({{ site.baseurl }}{% link bestpractice.md %}).
+If you are a new user, please read our [introduction]({{ site.baseurl }}{% link introduction.md %}), the [hardware description]({{ site.baseurl }}{% link hardware.md %}) and about [best practices]({{ site.baseurl }}{% link bestpractice.md %}).
 There is also more information about Slurm, using GPU nodes, MPI and available Software.
 
 ![The PLEIADES Cluster](assets/img/cluster.jpg)
