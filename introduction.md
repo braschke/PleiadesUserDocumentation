@@ -13,7 +13,7 @@ If your group was **not** involved in PLEIADES, please ask your group leader to 
 ### Questions/Support
 In case of questions and problems, please use the following email address:
 
-**lcg-admin{at}physik.uni-wuppertal.de**
+**pleiades{at}uni-wuppertal.de**
 
 
 ### First Login and password change
