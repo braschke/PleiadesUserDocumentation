@@ -13,7 +13,7 @@ There is also more information about Slurm, using GPU nodes, MPI and available S
 
 In case of further questions you can contact us at
 
-**lcg-admin{at}physik.uni-wuppertal.de**
+**pleiades{at}uni-wuppertal.de**
 
 More resources:
   - [Official PLEIADES page](http://pleiades.uni-wuppertal.de/)
