@@ -12,7 +12,7 @@ There are multiple MPI environments available:
 All MPI versions were tested on Pleiades with an MPI benchmark.
 These tests covered the mpirun and srun approach (see below), as well as ethernet and infiniband communication.
 
-Many problems with MPI are caused by a mismatch between the applications expected MPI version/configuration and the used MPI version in your environment.
+Many problems with MPI are caused by a mismatch between the application's expected MPI version/configuration and the used MPI version in your environment.
 If you experience problems, try a clean build and investigate MPI related options during your application build and at runtime.
 
 
