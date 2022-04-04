@@ -52,7 +52,7 @@ This is a case-by-case situation where you should study the corresponding docume
 
 Consider reading the [Slurm MPI documentation](https://slurm.schedmd.com/mpi_guide.html).
 
-Deciding on the number of nodes, processes and cores per process can confusing sometimes.
+Deciding on the number of nodes, processes and cores per process can be confusing sometimes.
 Use `srun --cpu-bind=help` to show available options to bind CPU resources managed by Slurm to your (MPI-)processes and have a look at the [Slurm CPU Management guide](https://slurm.schedmd.com/cpu_management.html).
 
 
