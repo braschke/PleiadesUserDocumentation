@@ -40,12 +40,13 @@ Non-BUW users can not use the portal and should rather check with their home ins
    - copy it to `~/.globus/certs.p12`
    - Extract a **certificate** from it with `openssl pkcs12 -clcerts -nokeys  -in certs.p12 -out usercert.pem`
       - the certificate is your passport, you "show" to services to authenticate yourself
-   - Extract a **key** from it with `openssl pkcs12 -nocerts -in usercert.p12 -out userkey.pem`
+   - Extract a **key** from it with `openssl pkcs12 -nocerts -in certs.p12 -out userkey.pem`. 
+   - **Make sure the key can only be read by yourself:** `chmod 400 userkey.pem`.
       - the key file is your secret key, that unlocks your certificate. Protect the key with a good password, do not share the key with anyone and backup the key, as it cannot be recovered, if the file got lost or you forgot the password
    - **in addition** import the certs.p12 into your browser:
-      - Firefox: Settings → Certificates → View Certificates → Your Certificates → Chrome
+      - Firefox: Settings → Certificates → View Certificates → Your Certificates → Import
       - Chrome: Settings → Security → Manage Certificates → Import (depends on your operating system, that's why we stongly recommend Firefox!)
-5. with your user certificate as "passport"  you have to register at your experiment/VO - so that your experiment/VO accepts your certificate and you can use experiment resources.
+5. with your user certificate as "passport" you have to register at your experiment/VO - so that your experiment/VO accepts your certificate and you can use experiment resources.
    - if you have already registered a (previous) certificate, you can add another certificate DN (DN= text string in your certificate, that identifies you) to your experiment account
    -  for ATLAS, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action) server is the central point for your registration
 6. Depending on your browser version, it might be necessary to check in your browser's certificate trust settings → the `The USERTRUST Network` certificate authority needs to be trusted for all operations
