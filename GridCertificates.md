@@ -2,8 +2,8 @@
 
 ## Background
 
-For many many years, the German GridKa Certification Authority (CA) at KIT in Karlsruhe will cease operation at 11 June 2023 as the CA cert ends. 
-As a successor the [GÉANT](https://geant.org/) Europe's leading collaboration on network and related infrastructure and services for the benefit of research and education offers the services Sectigo Certificate Manager to obtain Grid user certificates starting now.
+After many many years, the German GridKa Certification Authority (CA) at KIT in Karlsruhe will cease operation at 11 June 2023 as the CA cert ends. 
+As a successor the [GÉANT](https://geant.org/) Europe's leading collaboration on network and related infrastructure and services for the benefit of research and education offers the service Sectigo Certificate Manager to obtain Grid user certificates starting now.
 
 ## Introduction
 
@@ -36,10 +36,15 @@ Non-BUW users can not use the portal and should rather check with their home ins
    - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq)
 3. after a short while the new cert can be downloaded from the page
 4. on Linux machines with Grid setups, the certificate and key files are usually placed in the directory ~/.globus/ 
-   - Download certificate and copy it to ~/.globus/usercert.p12
+   - Download the `certs.p12` file the User Cert Manager offers you.
+   - copy it to `~/.globus/certs.p12`
+   - Extract a **certifiate** from it with `openssl pkcs12 -clcerts -nokeys  -in certs.p12 -out usercert.pem`
       - the certificate is your passport, you "show" to services to authenticate yourself
-   - copy as well the key file to ~/.globus/userkey.p12
+   - Extract a **key** from it with `openssl pkcs12 -nocerts -in usercert.p12 -out userkey.pem`
       - the key file is your secret key, that unlocks your certificate. Protect the key with a good password, do not share the key with anyone and backup the key, as it cannot be recovered, if the file got lost or you forgot the password
+   - **in addition** import the certs.p12 into your browser:
+      - Firefox: Settings → Certificates → View Certificates → Your Certificates → Chrome
+      - Chrome: Settings → Security → Manage Certificates → Import (depends on your operating system, that's why we stongly recommend Firefox!)
 5. with your user certificate as "passport"  you have to register at your experiment/VO - so that your experiment/VO accepts your certificate and you can use experiment resources.
    - if you have already registered a (previous) certificate, you can add another certificate DN (DN= text string in your certificate, that identifies you) to your experiment account
    -  for ATLAS, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action) server is the central point for your registration
@@ -52,7 +57,7 @@ in the `The USERTRUST Network` block, select `Edit Trust` if for `GEANT eScience
 search for `org-The USERTRUST Network` and ensure, that for both entries under `⋮` → Edit all trust settings are selected
 7. to avoid problems with previous certificates, restart your browser after importing and backing up the certificate and key has been done.
 I.e., to quit Firefox or Chrome explicitly select `Quit` or `Exit`, respectively, from the browsers' menues.
-   -         if everything works with your new certificate, you can optionally delete your previous certificate
+   -  if everything works with your new certificate, you can optionally delete your previous certificate
 
 ## Technicalities
 
