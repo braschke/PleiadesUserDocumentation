@@ -31,14 +31,14 @@ Non-BUW users can not use the portal and should rather check with their home ins
 1. Test your credentials (account_name / password) in [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/). If you encounter problems during the certificate request, please screenshot your status information in the SSO check portal for further debugging
 2. Request a Grid user certificate in [GEANT User Cert](https://cert-manager.com/customer/DFN/idp/clientgeant).
    - profile: GÉANT IGTF-MICS Personal
-   - chose: Key Generation
+   - choose: Key Generation
    - algorithm: RSA-4096
    - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq)
 3. after a short while the new cert can be downloaded from the page
 4. on Linux machines with Grid setups, the certificate and key files are usually placed in the directory ~/.globus/ 
    - Download the `certs.p12` file the User Cert Manager offers you.
    - copy it to `~/.globus/certs.p12`
-   - Extract a **certifiate** from it with `openssl pkcs12 -clcerts -nokeys  -in certs.p12 -out usercert.pem`
+   - Extract a **certificate** from it with `openssl pkcs12 -clcerts -nokeys  -in certs.p12 -out usercert.pem`
       - the certificate is your passport, you "show" to services to authenticate yourself
    - Extract a **key** from it with `openssl pkcs12 -nocerts -in usercert.p12 -out userkey.pem`
       - the key file is your secret key, that unlocks your certificate. Protect the key with a good password, do not share the key with anyone and backup the key, as it cannot be recovered, if the file got lost or you forgot the password
@@ -74,19 +74,19 @@ Download/export the file either form the browser or directly to the ~/.globus/us
 ```bash
 cd ~/.globus
  
- > mv usercert.p12 usercert.p12.old
+ > mv certs.p12 certs.p12.old
  > mv usercert.pem usercert.pem.old
  > mv userkey.pem  userkey.pem.old
  
  > ls -l
--r-------- 1 account group 8213 24. Jan 14:36 usercert.p12
--r-------- 1 account group 2611 31. Jan 13:40 usercert.p12.old
+-r-------- 1 account group 8213 24. Jan 14:36 certs.p12
+-r-------- 1 account group 2611 31. Jan 13:40 certs.p12.old
  
- > openssl pkcs12 -clcerts -nokeys  -in usercert.p12 -out usercert.pem
- > openssl pkcs12 -nocerts          -in usercert.p12 -out userkey.pem
+ > openssl pkcs12 -clcerts -nokeys  -in certs.p12 -out usercert.pem
+ > openssl pkcs12 -nocerts          -in certs.p12 -out userkey.pem
  
  > ls -l
--r-------- 1 account group 8213 24. Jan 14:36 usercert.p12
+-r-------- 1 account group 8213 24. Jan 14:36 certs.p12
 -r-------- 1 account group 8213 24. Jan 14:38 usercert.pem
 -r-------- 1 account group 2611 31. Jan 13:42 userkey.pem
 ```
