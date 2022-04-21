@@ -31,7 +31,87 @@ Non-BUW users can not use the portal and should rather check with their home ins
 1. Test your credentials (account_name / password) in [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/). If you encounter problems during the certificate request, please screenshot your status information in the SSO check portal for further debugging
 2. Request a Grid user certificate in [GEANT User Cert](https://cert-manager.com/customer/DFN/idp/clientgeant).
    - profile: GÉANT IGTF-MICS Personal
-    - chose: Key Generation
-    - algorithm: RSA-4096
-    - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq)
-3. [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action)
+   - chose: Key Generation
+   - algorithm: RSA-4096
+   - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq)
+3. after a short while the new cert can be downloaded from the page
+4. on Linux machines with Grid setups, the certificate and key files are usually placed in the directory ~/.globus/ 
+   - Download certificate and copy it to ~/.globus/usercert.p12
+      - the certificate is your passport, you "show" to services to authenticate yourself
+   - copy as well the key file to ~/.globus/userkey.p12
+      - the key file is your secret key, that unlocks your certificate. Protect the key with a good password, do not share the key with anyone and backup the key, as it cannot be recovered, if the file got lost or you forgot the password
+5. with your user certificate as "passport"  you have to register at your experiment/VO - so that your experiment/VO accepts your certificate and you can use experiment resources.
+   - if you have already registered a (previous) certificate, you can add another certificate DN (DN= text string in your certificate, that identifies you) to your experiment account
+   -  for ATLAS, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action) server is the central point for your registration
+6. Depending on your browser version, it might be necessary to check in your browser's certificate trust settings → the `The USERTRUST Network` certificate authority needs to be trusted for all operations
+   - Firefox:
+      - Settings → Certificates → View Certificates → Authorities
+in the `The USERTRUST Network` block, select `Edit Trust` if for `GEANT eScience Personal CA` and ensure, that all trust settings are enabled 
+   - Chrome:
+      - Settings → Security → Manage Certificates → Authorities
+search for `org-The USERTRUST Network` and ensure, that for both entries under `⋮` → Edit all trust settings are selected
+7. to avoid problems with previous certificates, restart your browser after importing and backing up the certificate and key has been done.
+I.e., to quit Firefox or Chrome explicitly select `Quit` or `Exit`, respectively, from the browsers' menues.
+   -         if everything works with your new certificate, you can optionally delete your previous certificate
+
+## Technicalities
+
+Technically a new private/public key pair is created with every renewal.
+
+### Finding certificates in Firefox browser
+
+Preferences -> Privacy & Security -> Certificates -> View Certificates -> Your Certificates (-> Backup)
+
+### Extracting the cert Files
+
+Download/export the file either form the browser or directly to the ~/.globus/usercert.p12 directory and make sure to safe the old files. Then use openssl to extract ~/.globus/usercert.pem and ~/.globus/userkey.pem. Have your export passphrase at hand!
+
+```bash
+cd ~/.globus
+ 
+ > mv usercert.p12 usercert.p12.old
+ > mv usercert.pem usercert.pem.old
+ > mv userkey.pem  userkey.pem.old
+ 
+ > ls -l
+-r-------- 1 account group 8213 24. Jan 14:36 usercert.p12
+-r-------- 1 account group 2611 31. Jan 13:40 usercert.p12.old
+ 
+ > openssl pkcs12 -clcerts -nokeys  -in usercert.p12 -out usercert.pem
+ > openssl pkcs12 -nocerts          -in usercert.p12 -out userkey.pem
+ 
+ > ls -l
+-r-------- 1 account group 8213 24. Jan 14:36 usercert.p12
+-r-------- 1 account group 8213 24. Jan 14:38 usercert.pem
+-r-------- 1 account group 2611 31. Jan 13:42 userkey.pem
+```
+
+### Inspecting Grid user certificates
+
+Please make sure your public (usercert.pem) and private (userkey.pem) keys are:
+
+- in the correct directory,
+- have the correct permissions,
+- show your DN,
+- are valid,
+- match each other (have the same md5sum),
+- you remember the password.
+
+```bash
+> cd ~/.globus
+ 
+ > ls -l
+...
+-r--r--r-- 1 account group  1728  8. Apr 09:36 usercert.pem
+-r-------- 1 account group  2012  8. Apr 09:36 userkey.pem
+ 
+ > openssl x509 -subject -issuer -dates -noout -in usercert.pem
+subject= /DC=org/DC=terena/DC=tcs/C=DE/O=Bergische Universitaet Wuppertal/CN=Harenberg, Torsten harenber@uni-wuppertal.de
+issuer= /C=NL/O=GEANT Vereniging/CN=GEANT eScience Personal CA 4
+notBefore=Apr 20 00:00:00 2022 GMT
+notAfter=Apr 20 23:59:59 2023 GMT
+ 
+ > openssl x509 -noout -modulus -in usercert.pem | openssl md5
+ > openssl rsa -noout -modulus -in userkey.pem   | openssl md5
+ ```
+ 
