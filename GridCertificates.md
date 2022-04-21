@@ -48,7 +48,8 @@ Non-BUW users can not use the portal and should rather check with their home ins
       - Chrome: Settings → Security → Manage Certificates → Import (depends on your operating system, that's why we stongly recommend Firefox!)
 5. with your user certificate as "passport" you have to register at your experiment/VO - so that your experiment/VO accepts your certificate and you can use experiment resources.
    - if you have already registered a (previous) certificate, you can add another certificate DN (DN= text string in your certificate, that identifies you) to your experiment account
-   -  for ATLAS, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action) server is the central point for your registration
+   -  for **ATLAS**, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action) server is the central point for your registration
+      - more information about Grid Certificate and VO Membership from an ATLAS point of view is available [here](https://confluence.desy.de/display/grid/Grid+User+Certificates+New) 
 6. Depending on your browser version, it might be necessary to check in your browser's certificate trust settings → the `The USERTRUST Network` certificate authority needs to be trusted for all operations
    - Firefox:
       - Settings → Certificates → View Certificates → Authorities
