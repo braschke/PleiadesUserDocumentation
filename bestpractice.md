@@ -30,8 +30,17 @@ This way you bundle all of these jobs in a single job submission, but still can 
 Please try to estimate a maximum execution time and set your job time limits accordingly.
   * Specify it with `-t`, shorter than the partitions maximum time
   * This will also increase the likelihood of your job starting early!
-  * You can submit long running jobs to the `long` partition, but there are a couple of risks involved:
+  * For longer job times than three days, **if your program regularly saves states/snapshots**:
+    * Schedule a first job to the normal partition
+    * Use `sbatch -d <jobid>` to set a job dependency to the original job, to continue processing
+  * As an exception, the `long` partition allows for longer jobs, but there are a couple of risks involved:
+    * Jobs naturally have to wait longer to start, since other (long) jobs may block the partition resources
     * A power or cooling failure might kill your jobs prematurely, wasting all of the computation and energy up to that point
     * Planned maintenance has to wait longer until your jobs are finished. In case of critical security interventions we might be even forced to kill you jobs.
-    * Both issues are mitigated if your programs have some form of checkpointing to save intermediate states
-    * Jobs naturally have to wait longer to start, since other (long) jobs may block the partition resources
+    * All issues are mitigated if your programs have some form of checkpointing to save intermediate states. In this case, use the normal partition as described above.
+
+
+### Moving Data
+The login nodes, especially fugg1 and 2, are mostly intended for job submissions.
+If you expect to move larger amounts of data, e.g. to a local computer, consider submitting a job that moves the data from a worker node to your system.
+This way, you can shift the workload away from login nodes.
