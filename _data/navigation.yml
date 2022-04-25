@@ -23,3 +23,5 @@
       url: /software/singularity
 - title: Zabbix Monitoring
   url: /zabbix
+- title: wLCG Grid Certificates
+  url: /GridCertificates
