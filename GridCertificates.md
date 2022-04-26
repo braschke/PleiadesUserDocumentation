@@ -20,20 +20,20 @@ The certificate can/should be copied to all devices/browsers which need it.
 
 ## Authorities
 
-The [GÉANT](https://geant.org/) CA is part of The [International Grid Trust Federation (IGTF)](http://www.igtf.net/) hence Grid user certificates are accepted by all Grid sites in WLCG. In order to facilitate the request procedure, many institutions in Germany operated Registration Authorities (RA) which take over the necessary paper-work on behalf of the CA.
+The [GÉANT](https://geant.org/) CA is part of The [International Grid Trust Federation (IGTF)](http://www.igtf.net/){:target="_blank" rel="noopener"}  hence Grid user certificates are accepted by all Grid sites in WLCG. In order to facilitate the request procedure, many institutions in Germany operated Registration Authorities (RA) which take over the necessary paper-work on behalf of the CA.
 
-BUW employees may use their ZIM account to authenticate against GÉANT and request a Grid user certificate. Use the portal [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/) to test your account. 
+BUW employees may use their ZIM account to authenticate against GÉANT and request a Grid user certificate. Use the portal [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/){:target="_blank" rel="noopener"}  to test your account. 
 
 Non-BUW users can not use the portal and should rather check with their home institution officials how to proceed.
 
 ## Procedure
 
-1. Test your credentials (account_name / password) in [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/). If you encounter problems during the certificate request, please screenshot your status information in the SSO check portal for further debugging
-2. Request a Grid user certificate in [GEANT User Cert](https://cert-manager.com/customer/DFN/idp/clientgeant).
+1. Test your credentials (account_name / password) in [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/){:target="_blank" rel="noopener"} . If you encounter problems during the certificate request, please screenshot your status information in the SSO check portal for further debugging
+2. Request a Grid user certificate in [GEANT User Cert](https://cert-manager.com/customer/DFN/idp/clientgeant){:target="_blank" rel="noopener"} .
    - profile: GÉANT IGTF-MICS Personal
-   - choose: Key Generation
-   - algorithm: RSA-4096
-   - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq)
+   - choose Enrollment Method: Key Generation
+   - Key Type: RSA-4096
+   - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq){:target="_blank" rel="noopener"} 
 3. after a short while the new cert can be downloaded from the page
 4. on Linux machines with Grid setups, the certificate and key files are usually placed in the directory ~/.globus/ 
    - Download the `certs.p12` file the User Cert Manager offers you.
@@ -48,8 +48,8 @@ Non-BUW users can not use the portal and should rather check with their home ins
       - Chrome: Settings → Security → Manage Certificates → Import (depends on your operating system, that's why we stongly recommend Firefox!)
 5. with your user certificate as "passport" you have to register at your experiment/VO - so that your experiment/VO accepts your certificate and you can use experiment resources.
    - if you have already registered a (previous) certificate, you can add another certificate DN (DN= text string in your certificate, that identifies you) to your experiment account
-   -  for **ATLAS**, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action) server is the central point for your registration
-      - more information about Grid Certificate and VO Membership from an ATLAS point of view is available [here](https://confluence.desy.de/display/grid/Grid+User+Certificates+New) 
+   -  for **ATLAS**, this [VOMS](https://lcg-voms2.cern.ch:8443/voms/atlas/user/home.action){:target="_blank" rel="noopener"}  server is the central point for your registration
+      - more information about Grid Certificate and VO Membership from an ATLAS point of view is available [here](https://confluence.desy.de/display/grid/Grid+User+Certificates+New){:target="_blank" rel="noopener"} 
 6. Depending on your browser version, it might be necessary to check in your browser's certificate trust settings → the `The USERTRUST Network` certificate authority needs to be trusted for all operations
    - Firefox:
       - Settings → Certificates → View Certificates → Authorities
