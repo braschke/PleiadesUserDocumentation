@@ -134,4 +134,15 @@ The fair share factor will recover with a half-life of 7 days and all fair share
 
 ### Singularity and Slurm
 You can use Singularity in Slurm batch script by just calling the respective command within the script and prepend a srun.  
-Note for members of the whep group: submitting from higgs/top might be setting your singularity cache within /common/home, which is not available from the worker nodes. Consider using the SINGULARITY_CACHEDIR environment variable to define a shared location.
+Note for members of the whep group: submitting from higgs/top might be setting your singularity cache within /common/home, which is not available from the worker nodes. Consider using the `SINGULARITY_CACHEDIR` environment variable to define a shared location.
+
+
+### X-Forwarding in Slurm
+Slurm can use X-forwarding to redirect a GUI to the login node:
+```bash
+user@local$ ssh -X user@fugg1.pleiades.uni-wuppertal.de
+user@fugg1$ srun -p short --x11 --pty /bin/bash
+user@wn21X$ # setup modules and start GUI program here
+```
+Keep in mind that the batch system is mostly intended for batch processing.
+The interactive usage is mostly useful for quick checks or debugging.
