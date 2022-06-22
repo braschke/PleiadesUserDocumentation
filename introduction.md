@@ -40,10 +40,20 @@ Due to massive attacks from all over the world, SSH access is limited to IPs fro
 A good practice for using ssh regularly is to setup ssh-keys on your local machine and use
 
 ```bash
+# On your local computer (assuming Linux):
+# ----------------------------------------
+# if you don't have a key, e.g. ~/.ssh/id_ed25519.pub, create a new one
+# and set a password!
+ssh-keygen -t ed25519
+# copy the ssh key to fugg1
 ssh-copy-id USERNAME@fugg1.pleiades.uni-wuppertal.de
+# Login will now use the ssh key
+ssh USERNAME@fugg1.pleiades.uni-wuppertal.de
 ```
 
 (from your local machine) to enable a key-based login on the frontend.
+
+More info about ssh keys is available in the [corresponding github documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 
 ### Login (whep users)
