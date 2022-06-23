@@ -7,13 +7,16 @@ There are multiple MPI environments available:
 1. OpenMPI4: `module load 2021a GCC/10.3.0 OpenMPI/4.1.1`
 1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or [through Parallel Studio](software/intel) (Version from 2020)
 1. Local package OpenMPI3 in `/lib64/openmpi3` on our worker nodes
-1. Compiling your own MPI libraries
+1. Compiling your own MPI libraries[^1]
+1. LCG release (See last section of [modules]({{ site.baseurl }}{% link software/modules.md %}))[^1]
 
 All MPI versions were tested on Pleiades with an MPI benchmark.
 These tests covered the mpirun and srun approach (see below), as well as ethernet and infiniband communication.
 
 Many problems with MPI are caused by a mismatch between the applications expected MPI version/configuration and the used MPI version in your environment.
 If you experience problems, try a clean build and investigate MPI related options during your application build and at runtime.
+
+[^1]: likely to communicate via ethernet instead of InfiniBand!
 
 
 ### PMI Library
