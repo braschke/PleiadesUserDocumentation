@@ -9,7 +9,8 @@ Many and frequent accesses to files on `/beegfs` can produce significant load on
 In consequence, the responsiveness of the shared filesystem goes bad for all users.
 There are a couple of things you should avoid when working on `/beegfs`, because of this:
 * **Too many files in a single directory**. Each directory is managed by one of the metadata servers and having very many files (e.g. 1000+) in one directory can result in unbalanced blocking operations, if the directory is used in your jobs.
-* Frequent lookups in a directory, e.g. through ls or implicitly through any readdir operation in your program or programming language. The lookup results in a locked operations in the metadata server. This could happen if you frequently check for file status in your job scripts.
+* Frequent lookups in a directory, e.g. through `ls` or implicitly through any `readdir` operation in your program or programming language. The lookup results in a locked operations in the metadata server. This could happen if you frequently check for file status in your job scripts.
+* Starting many short running processes (seconds), with the software installed on BeeGFS. Each process is creating a new data stream to read the program data, which can overwhelm the storage system.
 * Using `/beegfs` as your working directory for frequent file I/O in your job. Please consider using the local `/tmp` storage. Every worker node is equipped with fast 2TB SSDs for exactly this purpose.
   * Afterwards you can transfer your results to a permanent storage on `/beegfs`
   * If you want to store logfiles etc., consider packing everything in a `.tar` file, since a single large file is better to digest on a parallel filesystem than many small files
