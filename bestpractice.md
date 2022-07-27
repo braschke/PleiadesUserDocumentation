@@ -7,7 +7,7 @@ title: "Best Practices"
 > **Note:**
 >
 > Your files on BeeGFS are not backed up!
-> Be sure to regularly store important results and data on another device.
+> Make sure to regularly store important results and data on another device.
 > In case of a catastrophic failure or event, we won't be able to restore the data.
 
 ### BeeGFS and /tmp
