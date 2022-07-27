@@ -4,6 +4,12 @@ title: "Best Practices"
 
 ## Best Practise
 
+> **Note:**
+>
+> Your files on BeeGFS are not backed up!
+> Be sure to regularly store important results and data on another device.
+> In case of a catastrophic failure or event, we won't be able to restore the data.
+
 ### BeeGFS and /tmp
 Many and frequent accesses to files on `/beegfs` can produce significant load on the metadata servers.
 In consequence, the responsiveness of the shared filesystem goes bad for all users.
@@ -21,11 +27,6 @@ Right now, the best approach is to book an interactive shell on the node and res
 ```bash
 srun -p short -w wn21053 -n1 -t 60 --pty /bin/bash
 ```
-
-> **Note:**
-> Your files on BeeGFS are not backed up!
-> Be sure to regularly store important results and data on another device.
-> In case of a catastrophic failure or event, we won't be able to restore the data.
 
 
 ### Slurm
