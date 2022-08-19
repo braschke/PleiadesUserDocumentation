@@ -3,7 +3,7 @@ title: "Hardware"
 ---
 
 ## Hardware
-The cluster consists of 268 workernodes with 14848 Cores in total.
+The cluster consists of 268 workernodes with 17152 Cores in total.
 Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
 931 TB of parallel storage are provided with BeeGFS.
 
