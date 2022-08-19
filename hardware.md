@@ -3,7 +3,7 @@ title: "Hardware"
 ---
 
 ## Hardware
-The cluster consists of 232 workernodes with 14848 Cores in total.
+The cluster consists of 268 workernodes with 14848 Cores in total.
 Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
 931 TB of parallel storage are provided with BeeGFS.
 
@@ -15,7 +15,7 @@ Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
     - Because of architecture differences and limited resources, you should try to compile your programs through our batch system or work in interactive slurm sessions.
     - `fugg2` has infiniband-enabled access to BeeGFS
   - `top` and `higgs` (only available to whep users)
-- **wn21[001-232]**: 
+- **wn21[001-268]**: 
   - 2 sockets with AMD EPYC 7452 32-Core processor. 64 Cores in total
   - Hyperthreading disabled
   - 256GB memory, 4GB per thread
@@ -31,7 +31,7 @@ Additionally, there are 5 GPU nodes with 8 NVidia A100 GPUs and 128 Cores each.
 
 
 ### Network
-The CPU Worker nodes wn21[001-232] are connected to each other and to the BeeGFS servers via infiniband and ethernet.
+The CPU Worker nodes wn21[001-268] are connected to each other and to the BeeGFS servers via infiniband and ethernet.
 All GPU nodes (gpu21[001-005]) are in a separate infiniband network and access BeeGFS via ethernet.
 The login nodes are currently connected to all other nodes via ethernet.
 
