@@ -34,6 +34,7 @@ Non-BUW users can not use the portal and should rather check with their home ins
    - choose Enrollment Method: Key Generation
    - Key Type: RSA-4096
    - more detailed information is available on the [DFN FAQ page](https://doku.tid.dfn.de/de:dfnpki:tcsfaq){:target="_blank" rel="noopener"} 
+   - **In case of problems**, e.g. if you don't have an employee ZIM account and start the request as a student: Request a GridCertificate at [pki.pca.dfn.de/](https://pki.pca.dfn.de/grid-root-ca/cgi-bin/pub/pki?cmd=getStaticPage&name=index&RA_ID=165)
 3. after a short while the new cert can be downloaded from the page
 4. on Linux machines with Grid setups, the certificate and key files are usually placed in the directory ~/.globus/ 
    - Download the `certs.p12` file the User Cert Manager offers you.
