@@ -18,7 +18,7 @@ Jobs can run in one out of three partitions, namely:
 - **normal** (default), with a time limit of 3 days
 - **short**, intended for development and tests, with a time limit of 1 hour
 - long, with a default time limit of 7 days. Only 30 nodes at a time are allowed to execute in this partition.
-- **gpu**, with a time limit of 3 days. See [Using GPUs](gpu) for more information on how to submit jobs with GPU resources
+- **gpu**, with a time limit of 3 days. See [Using GPUs](slurm/gpu) for more information on how to submit jobs with GPU resources
 
 Think of partitions as a set of worker nodes, which are available to execute your jobs.
 

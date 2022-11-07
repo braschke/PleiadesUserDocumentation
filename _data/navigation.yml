@@ -1,27 +1,56 @@
 - title: Home
   url: /
-- title: Introduction
-  url: /introduction
+- title: Getting Started
+  url: /gettingstarted
+  sublinks:
+    - title: Access and Login
+      url: /gettingstarted/access
+    - title: Software
+      url: /gettingstarted/software
+    - title: Computations
+      url: /gettingstarted/computations
+    - title: Monitoring
+      url: /gettingstarted/zabbix
 - title: Hardware
   url: /hardware
-- title: Best Practise
-  url: /bestpractice
-- title: Slurm
+- title: File Systems
+  url: /filesystem
+  sublinks:
+    - title: BeeGFS
+      url: /filesystem/BeeGFS
+    - title: File Transfers
+      url: /filesystem/filetransfers
+    - title: Best Practices
+      url: /filesystem/bestpractices
+- title: Job Submission
   url: /slurm
-- title: Using GPUs
-  url: /gpu
-- title: MPI on Pleiades
-  url: /mpi
+  sublinks:
+    - title: Submitting a Job
+      url: /slurm/basics
+    - title: Using GPUs
+      url: /slurm/gpu
+    - title: Example Job: Job Dependencies
+      url: /slurm/exampleDeps
+    - title: Example Job: /tmp cleanup
+      url: /slurm/exampleTmp
+    - title: Best Practices
+      url: /slurm/bestpractices
 - title: Software
   url: /software
   sublinks:
-    - title: Software Modules
+    - title: Available Software
+      url: /software/avail
+    - title: More about Software Modules
       url: /software/modules
+    - title: MPI on Pleiades
+      url: /software/mpi
+    - title: Containers
+      url: /software/containers
     - title: PGI
       url: /software/pgi
-    - title: Singularity
-      url: /software/singularity
-- title: Zabbix Monitoring
-  url: /zabbix
+    - title: Best Practices
+      url: /software/bestpractices
 - title: wLCG Grid Certificates
   url: /GridCertificates
+- title: FAQ
+  url: /faq

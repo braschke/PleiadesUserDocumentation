@@ -1,9 +1,9 @@
 ---
-title: "Best Practices"
+title: "Slurm: Best Practices"
 ---
 
-## Best Practise
-### Slurm
+## Slurm: Best Practise
+
 Every job submission in Slurm introduces some overhead to the batch system.
 If you have many short jobs of the same kind, e.g. 2000 x 30 minutes, you should combine your workload in fewer submission scripts or consider using Slurms job arrays.
 This way you bundle all of these jobs in a single job submission, but still can treat the items individually as job steps.
@@ -19,3 +19,8 @@ Please try to estimate a maximum execution time and set your job time limits acc
     * A power or cooling failure might kill your jobs prematurely, wasting all of the computation and energy up to that point
     * Planned maintenance has to wait longer until your jobs are finished. In case of critical security interventions we might be even forced to kill you jobs.
     * All issues are mitigated if your programs have some form of checkpointing to save intermediate states. In this case, use the normal partition as described above.
+
+
+### Shellcheck
+Test your job scripts with [shellcheck.net](https://shellcheck.net/)!
+Very powerful and useful to highlight problems with shell scripts.
