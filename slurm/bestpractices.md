@@ -9,7 +9,7 @@ You can use it to check and improve your job scripts.
 
 ## Slurm: Best Practise
 Every job submission in Slurm introduces some overhead to the batch system.
-If you have many short jobs of the same kind, e.g. 2000 x 30 minutes, you should combine your workload in fewer submission scripts or consider using Slurms **job arrays**.
+If you have many short jobs of the same kind, e.g. 2000 x 30 minutes, you should combine your workload in fewer submission scripts or consider using Slurms **job arrays** (check [our example job](slurm/exampleArray)).
 This way you bundle all of these jobs in a single job submission, but still can treat the items individually as job steps.
 
 Please try to estimate a maximum execution time and set your job time limits accordingly.
