@@ -3,21 +3,9 @@ title: "Getting Started: Access"
 ---
 
 ## Getting Started: Access
-
-<!-- Who can request access -->
-<!-- How to request access -->
-<!-- How to log in -->
-<!-- What to do on first login -->
-<!--    change password -->
-<!--    Set ssh key -->
-<!-- SSH Config example -->
-<!-- Highlight fake domain problem! -->
-<!-- Simplify this page! Too much for a first look! -->
-
 ### Getting an account
 If you belong to one of the groups participating in PLEIADES, you can get an account by filling out [this form.](http://pleiades.uni-wuppertal.de/fileadmin/physik/pleiades/Accountantrag.pdf)
-
-If your group was **not** involved in PLEIADES, please ask your group leader to contact the support before submitting an account request!
+If your group was **not** involved in PLEIADES, please ask your group leader to contact the support before submitting an account request or consult our [HPC.NRW Quick Reference Card](https://uni-wuppertal.sciebo.de/s/zV3kmj8Um6G5DAi/download).
 
 
 ### Questions/Support
@@ -27,13 +15,29 @@ In case of questions and problems, please use the following email address:
 
 
 ### First Login and password change
-You will receive your initial password from the administrators after your group leader has countersigned the user application. You can change your password on any PLEIADES login machine by just using the
+You will receive your initial password from the administrators after your group leader has countersigned the user application.
+Please change your initial password on any Pleiades login machine by using the
 
 ```bash
-passwd
+$ passwd
 ```
 
 command.
+
+
+### SSH Login
+We recommend to create a password protected [ssh-key](https://hpc-wiki.info/hpc/Ssh_keys) pair to authenticate on login.
+Additionally you can define in your local `~/.ssh/config`:
+```
+Host fugg1
+    User <USERNAME>
+    Hostname fugg1.pleiades.uni-wuppertal.de
+    IdentityFile ~/.ssh/<KEYNAME>
+```
+
+This way, simply using `ssh fugg1` will log in correctly to the cluster.
+
+**Note:** This approach is also more secure, since mis-typing the URL for `uni-wuppertal.de` could expose your credentials to a malicious server that is not in our control.
 
 
 ### Login (all users except "whep" users)
