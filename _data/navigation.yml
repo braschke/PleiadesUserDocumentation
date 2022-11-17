@@ -29,11 +29,11 @@
       url: /slurm/basics
     - title: Using GPUs
       url: /slurm/gpu
-    - title: Example Job: Job Arrays
+    - title: "Example Job: Job Arrays"
       url: /slurm/exampleArray
-    - title: Example Job: Job Dependencies
+    - title: "Example Job: Job Dependencies"
       url: /slurm/exampleDeps
-    - title: Example Job: /tmp cleanup
+    - title: "Example Job: /tmp cleanup"
       url: /slurm/exampleTmp
     - title: Best Practices
       url: /slurm/bestpractices
