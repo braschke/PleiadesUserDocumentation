@@ -5,7 +5,7 @@ title: "Software: Available Software"
 ## Software: Available Software
 We offer many software installations through [modules]({{ site.baseurl }}{% link software/modules.md %}).
 Alternatively, you can source an LCG release, as described on the module page.
-Finally, you can use [Singularity]({{ site.baseurl }}{% link software/singularity.md %}) to set up a specific software environment by running your job in a container.
+Finally, you can use [Singularity]({{ site.baseurl }}{% link software/containers.md %}) to set up a specific software environment by running your job in a container.
 
 ### List of Special Software
   - CUDA
