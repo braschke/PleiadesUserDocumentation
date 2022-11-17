@@ -4,7 +4,7 @@ title: "Slurm example: Clean up tmp directory"
 
 
 ## Slurm example: Clean up tmp directory
-As mentioned in our [filesystem best practices](/filesystem/bestpractices), it is a good idea to use a local work directory for each job.
+As mentioned in our [filesystem best practices](../filesystem/bestpractices), it is a good idea to use a local work directory for each job.
 
 In the following minimal example, a local directory is created for the job.
 We use the `trap` built-in command to call a `clean_up` function in any case.
