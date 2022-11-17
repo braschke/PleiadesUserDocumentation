@@ -36,6 +36,7 @@ Host fugg1
 ```
 
 This way, simply using `ssh fugg1` will log in correctly to the cluster.
+More info about ssh keys is available in the [corresponding github documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 **Note:** This approach is also more secure, since mis-typing the URL for `uni-wuppertal.de` could expose your credentials to a malicious server that is not in our control.
 
@@ -66,8 +67,6 @@ ssh USERNAME@fugg1.pleiades.uni-wuppertal.de
 ```
 
 (from your local machine) to enable a key-based login on the frontend.
-
-More info about ssh keys is available in the [corresponding github documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 
 ### Login (whep users)
