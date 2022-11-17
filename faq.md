@@ -2,7 +2,7 @@
 title: "Frequently Answered Questions"
 ---
 
-In case of questions, please contact us at [pleiades@uni-wuppertal.de]{mailto:pleiades@uni-wuppertal.de}.
+In case of questions, please contact us at pleiades@uni-wuppertal.de.
 
 **Q:** Can I get access to the cluster?
 **A:**
