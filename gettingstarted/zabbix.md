@@ -4,7 +4,7 @@ title: "Getting Started: Monitoring"
 
 ## Getting Started: Monitoring
 Our monitoring service can be accessed at [zabbix.pleiades.uni-wuppertal.de](https://zabbix.pleiades.uni-wuppertal.de/) with the credentials "pleiades" and "pleiades".
-Zabbix collects and various information regarding current and past resource usage and quotas.
+Zabbix collects various information regarding current and past resource usage and quotas.
 
 ### Dashboard
 After login you are typically greeted by the user overview dashboard:
@@ -16,8 +16,8 @@ If it is not selected, you can access it by clicking `Monitoring > Dashboard > A
 The overview dashboard collects a couple of aggregated metrics and you can select the time frame of presented information on the top right.
 The visible graphs are:
 * **Total Cluster Load**: Average and maximum load on workernodes. This can give you a hint on how busy the CPUs are on all nodes
-* **Dcache Mover Usage**
-* **Beegfs Quotas in percent** and **Beegfs Group Quotas**: Information on how much space is available on BeeGFS per group.
+* **Dcache Mover Usage**: Activity of our dCache storage system (only relevant for ATLAS jobs).
+* **Beegfs Group Quotas**: Information on how much space is available on BeeGFS per group.
 * **Effective Share used by User Group**: Effective usage of each group as reported by Slurm. Usage resets every month.
 * **SLURM Allocated Cores by Group**: Current allocation of Cores per group as reported by Slurm.
 

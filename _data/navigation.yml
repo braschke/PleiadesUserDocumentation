@@ -5,7 +5,7 @@
   sublinks:
     - title: Access and Login
       url: /gettingstarted/access
-    - title: Software
+    - title: Software & File Systems
       url: /gettingstarted/software
     - title: Computations
       url: /gettingstarted/computations
@@ -42,7 +42,7 @@
   sublinks:
     - title: Available Software
       url: /software/avail
-    - title: More about Software Modules
+    - title: Using Software Modules
       url: /software/modules
     - title: MPI on Pleiades
       url: /software/mpi
@@ -50,8 +50,6 @@
       url: /software/containers
     - title: PGI
       url: /software/pgi
-    - title: Best Practices
-      url: /software/bestpractices
 - title: wLCG Grid Certificates
   url: /GridCertificates
 - title: FAQ

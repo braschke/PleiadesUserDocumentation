@@ -1,9 +1,10 @@
 ---
-title: "PGI"
+title: "Software: PGI"
 ---
+
 **PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
 
-## PGI
+## Software: PGI
 PGI provides tools to develop programs in a heterogeneous environment (CPUs & GPUs):
 
 - Fortran, C++17, C compilers

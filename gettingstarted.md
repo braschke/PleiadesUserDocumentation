@@ -7,7 +7,7 @@ These pages cover everything from requesting an account, important first steps, 
 We also describe our monitoring system, which can be useful to get a better picture of the activity on our cluster
 
 - [Access and Login](/gettingstarted/access)
-- [Software](/gettingstarted/software)
+- [Software & File Systems](/gettingstarted/software)
 - [Computations](/gettingstarted/computations)
 - [Monitoring](/gettingstarted/zabbix)
 <!-- resources? -->

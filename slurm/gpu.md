@@ -1,11 +1,11 @@
 ---
-title: "Job Submission with GPUs"
+title: "Slurm: Using GPUs"
 ---
 
-## Job Submission with GPUs
-
+## Slurm: Using GPUs
 This guide is introducing our newly available GPU nodes.
 The configuration is still very fresh, so please contact us if there are problems or if you expect something to behave differently.
+
 
 ### Hardware
 There are 5 identical GPU nodes available, called `gpu21[001-005]`.

@@ -1,8 +1,8 @@
 ---
-title: "MPI on PLEIADES"
+title: "Software: MPI on Pleiades"
 ---
 
-## MPI on Pleiades
+## Software: MPI on Pleiades
 There are multiple MPI environments available:
 1. OpenMPI4: `module load 2021a GCC/10.3.0 OpenMPI/4.1.1`
 1. Intel MPI: `module load 2021a iimpi/2021a` (oneAPI) or [through Parallel Studio](software/intel) (Version from 2020)

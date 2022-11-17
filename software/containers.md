@@ -1,8 +1,9 @@
 ---
-title: "Singularity"
+title: "Software: Containers"
 ---
 
-## Singularity
+## Software: Containers
+Apptainer (recently Singularity), is the most common containerization technology on HPC systems.
 
 ### Different compiler versions using singularity
 The container management program singularity is installed on the system. If you need a different compiler version in order to be able to compile your program, you can download them as an image from the docker hub by using the command

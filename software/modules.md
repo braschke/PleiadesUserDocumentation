@@ -1,8 +1,8 @@
 ---
-title: "Software Modules"
+title: "Software: Modules"
 ---
 
-## Software Modules
+## Software: Modules
 We use [LMod](https://lmod.readthedocs.io/) environment modules to provide software installations to our users.
 Please have a look at the [LMod user guide](https://lmod.readthedocs.io/en/latest/010_user.html).
 
