@@ -22,7 +22,7 @@ Finally, you can use [Singularity]({{ site.baseurl }}{% link software/containers
   - Intel parallel studio XE 2020
     - Contains compilers, MPI, libraries and profiling tools like VTune Amplifier, Advisor, etc.
     - **Parallel studio is superseded by oneAPI modules** Example modules: `intel-compilers`, `impi`, `imkl`, `VTune`
-    - Set up with `source /beegfs/Tools/intel/setup.sh`
+    - If you want to set up the old version, go with `source /beegfs/Tools/intel/setup.sh`
   - [PGI]({{ site.baseurl }}{% link software/pgi.md %})
     - Collection of special purpose compilers for heterogeneous environments (CPUs & GPUs)
     - **PGI is superseded by the [NVHPC module]({{ site.baseurl }}{% link software/modules.md %}), but both approaches should work.**
