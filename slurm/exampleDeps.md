@@ -44,21 +44,24 @@ jobidF="$(sbatch --job-name=F --dependency=${jobidC},${jobidE} sleepjob.sh | gre
 ### Singleton job dependency
 Another interesting approach is a singleton job.
 Here you can submit many jobs with exactly the same job name.
-By using `--dependency=singleton`, Slurm will only execute
+By using `--dependency=singleton`, Slurm will only execute only a single jobs with said name at any given time.
+
+An example submission script could look like this:
 
 ```bash
 #!/usr/bin/env bash
 
 # Use the "singleton" flag to submit multiple jobs
 # with the same name. This combination will make sure
-# That only a single job runs at any given time.
+# that only a single job runs at any given time.
 
 for I in $(seq 10)
 do
-    sbatch --job-name=A --dependency=singleton sleepjob.sh
+    sbatch --job-name=A --dependency=singleton jobscript.sh
 done
 
-# Slurm will only every execute a single job with name "A"
+# Slurm will only execute a single job with name "A" at any given time.
+# The others will wait.
 ```
 
 This structure can be used to automatically continue computations after the maximum 3 days of our `normal` partition.
