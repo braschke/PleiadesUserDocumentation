@@ -11,5 +11,6 @@ A more general introduction to slurm is available at [slurm.schedmd.com/quicksta
 - [Example Job: Job Arrays](slurm/exampleArray)
 - [Example Job: Job Dependencies](slurm/exampleDeps)
 - [Example Job: /tmp cleanup](slurm/exampleTmp)
+- [Job performance](slurm/performance)
 - [Best Practices](slurm/bestpractices)
 

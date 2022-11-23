@@ -35,6 +35,8 @@
       url: /slurm/exampleDeps
     - title: "Example Job: /tmp cleanup"
       url: /slurm/exampleTmp
+    - title: Job Performance
+      url: /slurm/performance
     - title: Best Practices
       url: /slurm/bestpractices
 - title: Software
