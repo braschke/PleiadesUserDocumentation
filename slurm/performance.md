@@ -10,7 +10,7 @@ It can provide a quick overview of your jobs performance:
 
 * **TimeEff**: How much of the requested job time has been used
 * **CPUEff**: Ratio of active CPU time to the maximum possible with requested number of cores
-* **MemEff**: How much of the requested memory was at peak
+* **MemEff**: How much of the requested memory was used at peak
 
 ### Parameters
 You can use `reportseff -u <username>` to show all jobs from the past week.
