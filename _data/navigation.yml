@@ -48,6 +48,8 @@
       url: /software/modules
     - title: MPI on Pleiades
       url: /software/mpi
+    - title: Jupyter on Pleiades
+      url: /software/jupyter-nb_on_pleiades
     - title: Containers
       url: /software/containers
     - title: PGI
