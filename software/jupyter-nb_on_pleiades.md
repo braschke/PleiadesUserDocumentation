@@ -51,8 +51,6 @@ module load 2021a  GCCcore/10.3.0  JupyterLab/3.2.8
 
 # Start the notebook and send data through socket jupyter_wn.socket in $HOME
 srun -n1 jupyter-notebook --no-browser --no-mathjax --sock /beegfs/$USER/jupyter_wn.socket
-
-wait
 ```
     
 Feel free to adjust resource requirements to your needs. 
