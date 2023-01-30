@@ -51,21 +51,21 @@ module load 2021a  GCCcore/10.3.0  JupyterLab/3.2.8
 
 # Start the notebook and send data through socket jupyter_wn.socket in $HOME
 srun -n1 jupyter-notebook --no-browser --no-mathjax --sock /beegfs/$USER/jupyter_wn.socket
-
-wait
 ```
     
 Feel free to adjust resource requirements to your needs. 
 
 Once the job has been submitted, you will need to wait until the Jupyter notebook is actually running. You can check the job's status by entering `squeue -u $USER | grep jupyter-nb`, which will also provide you with the worker node on which the notebook is running (required for **step 2**). To confirm that all modules have been loaded and Jupyter is being forwarded to the socket, check the corresponding *.err*-file. When it contains a section with  
-`http://localhost:8888/?token=longTokenString`  
+```
+http://localhost:8888/?token=longTokenString
+```
 you are ready for the next step.
 
 
 #### Step 2: Tunneling to the Worker Node
 Worker nodes cannot be accessed from outside. This means, you cannot directly tunnel through socket `jupyter_wn.socket` from your local machine. Instead, you have to use one of the login nodes (*fugg1* or *fugg2*) as a jump host:
 
-```bash
+```
 ssh -L 8888:/beegfs/<username>/jupyter_wn.socket -J fugg1.pleiades.uni-wuppertal.de <username>@<worker-node>.pleiades.uni-wuppertal.de -N
 ```
 
@@ -78,10 +78,10 @@ Leave that terminal window open to sustain the connection to the socket. You can
 Once the tunnel is set up, you can access the Jupyter notebook by directing your favorite web browser to the URL in the *.err*-file from **step 1**. This could, for example, be:
 
 ```
-    http://localhost:8888/?token=0ef77dda74cag9274nc550ae49c55cb1c25ded2a6a0
+http://localhost:8888/?token=0ef77dda74cag9274nc550ae49c55cb1c25ded2a6a0
 ```
     
-Like in **step 2** before, you need to adjust the `8888` according to your desired local port. Keep in mind, that the message in the *.err*-File will always use port `8888`, so you might have to adjust it. The long string after `token=` is a security measure to prevent others from accessing your notebook.
+Like in **step 2** before, you need to adjust the `8888` according to your desired local port. Keep in mind, that the message in the *.err*-file will always use port `8888`, so you might have to adjust it. The long string after `token=` is a security measure to prevent others from accessing your notebook.
 
 
 #### Closing remarks
