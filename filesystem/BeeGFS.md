@@ -6,7 +6,8 @@ title: "File Systems: BeeGFS"
 A [BeeGFS](https://www.beegfs.io/) cluster file system is installed on fugg1.pleiades.uni-wuppertal.de login machine and on all cluster worker nodes, i.e. the file system is shared among all nodes and can be used to develop code and to save output files from cluster jobs.
 In general, no „copy constructions“ are needed.
 A group quota according to the share of each participating group has been applied.
-If needed additional user quotas can also be applied.
+The quota can be checked in our [monitoring system](gettingstarted/zabbix).
+
 You find your home directory at:
 
 ```bash
