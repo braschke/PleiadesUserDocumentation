@@ -28,6 +28,8 @@ Non-BUW users can not use the portal and should rather check with their home ins
 
 ## Procedure
 
+**There seem to be problems with the GEANT User Certificates when using those with for example AMI. Please use the alternative way (see 2. "In case of problems") for the time being** 
+
 1. Test your credentials (account_name / password) in [Certificate Manager SSO Check](https://cert-manager.com/customer/DFN/ssocheck/){:target="_blank" rel="noopener"} . If you encounter problems during the certificate request, please screenshot your status information in the SSO check portal for further debugging
 2. Request a Grid user certificate in [GEANT User Cert](https://cert-manager.com/customer/DFN/idp/clientgeant){:target="_blank" rel="noopener"} .
    - profile: GÉANT IGTF-MICS Personal
