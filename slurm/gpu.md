@@ -2,6 +2,13 @@
 title: "Slurm: Using GPUs"
 ---
 
+> **NOTE:**
+> The GPU resources are primarily owned by the `imacm` and `etechnik` groups.
+> All other groups are allowed to submit a limited number of jobs with a lower priority to increase utilization.
+> We may have to block access to GPU resources to other groups in times of high demand.
+> You can check your own group affiliation with `sshare -U`.
+
+
 ## Slurm: Using GPUs
 This guide is introducing our newly available GPU nodes.
 The configuration is still very fresh, so please contact us if there are problems or if you expect something to behave differently.
