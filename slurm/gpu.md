@@ -5,7 +5,7 @@ title: "Slurm: Using GPUs"
 > **NOTE:**
 > The GPU resources are primarily owned by the `imacm` and `etechnik` groups.
 > All other groups are allowed to submit a limited number of jobs with a lower priority to increase utilization.
-> We may have to block access to GPU resources to other groups in times of high demand.
+> We may have to block access to GPU resources by other groups in times of high demand.
 > You can check your own group affiliation with `sshare -U`.
 
 
