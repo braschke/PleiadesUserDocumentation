@@ -32,6 +32,7 @@ You can change the displayed dashboard through `Monitoring > Dashboard > All das
 [![Dashboard overview](../assets/img/zabbix/dashboard.jpg)](../assets/img/zabbix/dashboard.jpg)
 
 All available user dashboards are:
+
 [![Dashboard overview](../assets/img/zabbix/available_dashboards.jpg)](../assets/img/zabbix/available_dashboards.jpg)
 
 
