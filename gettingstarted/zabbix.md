@@ -51,17 +51,3 @@ These pages can help you answer questions like:
 * How much power does the GPU consume?
 
 If you know which GPUs your job is using, or if you use a whole node exclusively, this approach can help to assess your software performance.
-
-
-### Detailed Information
-To get detailed information about a single node, e.g. to see if a node you are currently working on is using its resources, you can go to the `Monitoring > Graphs` tab.
-
-First you need to select a group of hosts, e.g. `Worker Nodes`:
-[![Select monitoring group](../assets/img/zabbix/graph1.jpg)](../assets/img/zabbix/graph1.jpg)
-
-Within this group, you can select a specific host, e.g. `wn21001` or `gpu21001`:
-[![Select host in group](../assets/img/zabbix/graph2.jpg)](../assets/img/zabbix/graph2.jpg)
-
-The `Graph` drop down menu provides a range of metrics to investigate, e.g. `CPU` or `Memory utilization`.
-A graph in the bottom represents the data for this particular host with the usual options to specify a time frame:
-[![Graphs for gpu21001](../assets/img/zabbix/graph3.jpg)](../assets/img/zabbix/graph3.jpg)
