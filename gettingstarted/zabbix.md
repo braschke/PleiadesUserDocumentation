@@ -7,7 +7,7 @@ Our monitoring service can be accessed at [zabbix.pleiades.uni-wuppertal.de](htt
 Zabbix collects various information regarding current and past resource usage and quotas.
 
 ### Dashboard
-After login you are typically greeted by the user overview dashboard:
+After login you are typically greeted by the user dashboard:
 [![Dashboard overview](../assets/img/zabbix/user_dashboard.jpg)](../assets/img/zabbix/user_dashboard.jpg)
 
 There are also multiple sub-pages available, covering an overview and login-node-specific metrics:
@@ -27,7 +27,7 @@ More detailed pages about each class of login nodes provide information about:
 * **CPU usage**
 * **Memory usage**
 
-You can change the displayed dashboard through `Monitoring > Dashboard > All dashboards > user overview`:
+You can change the displayed dashboard through `Monitoring > Dashboard > All dashboards > User dashboard`:
 
 [![Dashboard overview](../assets/img/zabbix/dashboard.jpg)](../assets/img/zabbix/dashboard.jpg)
 
