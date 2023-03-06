@@ -148,3 +148,7 @@ When you login to any Pleiades login node, you will be asked now two questions:
 - What are these `emergency scratch codes` that I should write down?
 
    These codes *replace* a TOTP secret *once*. So if you cannot use TOTP for whatever reason, each of these codes will replace the TOTP secret. But once you use a code, this one gets invalid (that's why they are called *scratch codes*) 
+
+- HELP! HELP! HELP! I locked myself out
+
+   As usual, your friendly cluster admins are there to help. Just [send us a mail to create a ticket](mailto:pleiades@uni-wuppertal.de).
