@@ -119,5 +119,30 @@ If that does not work, you may add the secret key by hand:
 When you login to any Pleiades login node, you will be asked now two questions:
 
 `(account@loginnode.pleiades.uni-wuppertal.de) Password:` **Here you enter your usual passwor**\
-`(account@loginnode.pleiades.uni-wuppertal.de) Verification code:` **Here you enter the time limited code as provides by your smart phone app*
+`(account@loginnode.pleiades.uni-wuppertal.de) Verification code:` **Here you enter the time limited code as provides by your smart phone app**
 
+# FAQ
+
+- Are passwordless logins impossible with TOTP?
+
+   No. If you're using ssh keys, you can use them as usual. TOTP only affects password-based logins.
+
+- What if I loose my phone / get a new phone?
+
+   If you've written down the secret, you can restore your TOTP on a different device. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question)
+
+- I think my secret is compromized
+
+   You can reset TOTP by deleting `.google_authenticator` in your home directory and start again from step 2 above.
+
+- How to I get rid of this?
+
+   Just delete `.google_authenticator` in your home directory.
+   
+- TOTP sucks, why don't you provide FIDO2 keys?
+
+   Currently, some of our users still require Red Hat Enterprise Linux 7 which makes it nearly impossible to use FIDO2. 
+   
+- What are these `emergency scratch codes` that I should write down?
+
+   These codes *replace* a TOTP secret *once*. So if you cannot use TOTP for whatever reason, each of these codes will replace the TOTP secret. But once you use a code, this one gets invalid (that's why they are called *scratch codes*) 
