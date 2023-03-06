@@ -54,7 +54,7 @@ You will need an app implementing the TOTP standard. There are plenty available,
 
 #### Android
 
-For Android, we recommand [FreeOTP+](https://github.com/helloworld1/FreeOTPPlus) which is available from [Google Play](https://play.google.com/store/apps/details?id=org.liberty.android.freeotpplus) and [F-Droid](https://f-droid.org/de/packages/org.liberty.android.freeotpplus/).
+For Android, we recommend [FreeOTP+](https://github.com/helloworld1/FreeOTPPlus) which is available from [Google Play](https://play.google.com/store/apps/details?id=org.liberty.android.freeotpplus) and [F-Droid](https://f-droid.org/de/packages/org.liberty.android.freeotpplus/).
 
 Once installed, you need to configure FreeOTP+ to protect your TOTPs. Most modern smartphones offer the use of biometrics like using your fingerprint.  That makes it really easy to use FreeOTP+. But you can also choose a password to protect the access.
 
@@ -105,6 +105,8 @@ Then you will be presented a QR Code. *This is the important part. You will need
 `Do you want to enable rate-limiting? (y/n)` **n**
 
 > **Shortcut** If you're sick of answering stupid questions, here is the shortcut to the command above: `google-authenticator -u -t  -D -f -W`
+
+> **ATTENTION WHEP USERS** You have two home directories: the NFS-based /common/home/*username* on top/higgs and /beegfs/*username* on the cluster nodes. Please configure TOTP on top/higgs and once you're finished with the step above, copy the file `.google_authenticator' to your /beegfs/*username* directory.
 
 ## Step 3: inserting the secret key into your phone app
 
