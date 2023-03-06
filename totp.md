@@ -60,7 +60,7 @@ Once installed, you need to configure FreeOTP+ to protect your TOTPs. Most moder
 
 #### iOS
 
-For Apple devices, [2FAS](https://apps.apple.com/de/app/2fa-authenticator-2fas/id1217793794) is probably the best choice.
+For Apple devices, [2FAS](https://apps.apple.com/de/app/2fa-authenticator-2fas/id1217793794) is probably your best choice.
 
 ### Step 2: configure TOTP on Pleiades
 
@@ -75,7 +75,7 @@ The program will ask you a couple of questions, the answers are in **bold**:
 `Warning: pasting the following URL into your browser exposes the OTP secret to Google:
   https://www.google.com/chart?` *Just ignore the link*
 
-Then you will be presented a QR Code. *This is the important part. You will need to scan that with your phone.*
+Then you will be presented a QR Code. *This is the important part. You will need to scan that with your phone's TOTP app.*
 
 `Your new secret key is: ` *this is your secret key. Write it down and keep it in a safe place*\
 `Your verification code is ` *write this down*\
@@ -120,8 +120,8 @@ If that does not work, you may add the secret key by hand:
 
 When you login to any Pleiades login node, you will be asked now two questions:
 
-`(account@loginnode.pleiades.uni-wuppertal.de) Password:` **Here you enter your usual passwor**\
-`(account@loginnode.pleiades.uni-wuppertal.de) Verification code:` **Here you enter the time limited code as provides by your smart phone app**
+`(account@loginnode.pleiades.uni-wuppertal.de) Password:` **Here you enter your usual password**\
+`(account@loginnode.pleiades.uni-wuppertal.de) Verification code:` **Here you enter the time limited code provided by your smart phone app**
 
 # FAQ
 
@@ -131,7 +131,7 @@ When you login to any Pleiades login node, you will be asked now two questions:
 
 - What if I loose my phone / get a new phone?
 
-   If you've written down the secret, you can restore your TOTP on a different device. In addition, FreeOTP+ allows you to export and import your secrets. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question)
+   If you've written down the secret, you can restore your TOTP on a different device. In addition, FreeOTP+ on Android allows you to export and import your secrets, 2FAS on iOS offers backup/restore in iCloud. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question)
 
 - I think my secret is compromized
 
