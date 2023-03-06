@@ -60,13 +60,13 @@ Once installed, you need to configure FreeOTP+ to protect your TOTPs. Most moder
 
 #### iOS
 
-To be written.
+For Apple devices, [2FAS](https://apps.apple.com/de/app/2fa-authenticator-2fas/id1217793794) is probably the best choice.
 
 ### Step 2: configure TOTP on Pleiades
 
-This step has only required **once**
+This step is only required **once**
 
-Log into any Pleiades Login node and type `google-authenticator`.
+Log into any Pleiades Login node (whep users: please use higgs or top for that) and type `google-authenticator`.
 
 The program will ask you a couple of questions, the answers are in **bold**:
 
@@ -77,7 +77,7 @@ The program will ask you a couple of questions, the answers are in **bold**:
 
 Then you will be presented a QR Code. *This is the important part. You will need to scan that with your phone.*
 
-`Your new secret key is: ` *this is your secret key*\
+`Your new secret key is: ` *this is your secret key. Write it down and keep it in a safe place*\
 `Your verification code is ` *write this down*\
 `Your emergency scratch codes are:` *write them also down and keep them in a safe place*
 
@@ -131,7 +131,7 @@ When you login to any Pleiades login node, you will be asked now two questions:
 
 - What if I loose my phone / get a new phone?
 
-   If you've written down the secret, you can restore your TOTP on a different device. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question)
+   If you've written down the secret, you can restore your TOTP on a different device. In addition, FreeOTP+ allows you to export and import your secrets. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question)
 
 - I think my secret is compromized
 
