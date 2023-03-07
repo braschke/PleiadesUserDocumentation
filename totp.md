@@ -8,12 +8,17 @@ We currently offer [TOTP](https://en.wikipedia.org/wiki/Time-based_one-time_pass
 
 Once activated, you need to use an app on your smartphone which will present you a time-limited code, which you have to enter **additionally** before you will be granted access.
 
-Example of such a login:
+Example of such a login (**bold** text for emphasis of input):
 
-```
-Torsten-Harenbergs-MacBook-Air-2:~ harenber$ ssh fugg2.pleiades.uni-wuppertal.de
+<pre>
+Torsten-Harenbergs-MacBook-Air-2:~ harenber$ <b>ssh fugg2.pleiades.uni-wuppertal.de</b>
 (harenber@fugg2.pleiades.uni-wuppertal.de) Password:
 (harenber@fugg2.pleiades.uni-wuppertal.de) Verification code:
+</pre>
+
+Afterwards, you are greeted with the usual splash screen:
+
+```
 Last login: Mon Mar  6 10:29:23 2023 from guckloch.pleiades.uni-wuppertal.de
 
 ######
@@ -68,43 +73,52 @@ This step is only required **once**
 
 Log into any Pleiades Login node (whep users: please use higgs or top for that) and type `google-authenticator`.
 
-The program will ask you a couple of questions, the answers are in **bold**:
+The program will ask you a couple of questions, the answers are in **bold** and remarks in *italics*:
 
-`Do you want authentication tokens to be time-based (y/n)` **y**
+<pre>
+[harenber@fugg2 ~]$ <b>google-authenticator</b>
 
-`Warning: pasting the following URL into your browser exposes the OTP secret to Google:
-  https://www.google.com/chart?` *Just ignore the link*
+Do you want authentication tokens to be time-based (y/n) <b>y</b>
 
-Then you will be presented a QR Code. *This is the important part. You will need to scan that with your phone's TOTP app.*
+Warning: pasting the following URL into your browser exposes the OTP secret to Google:
+  https://www.google.com/chart?` <i>Just ignore the link</i>
+</pre>
 
-`Your new secret key is: ` *this is your secret key. Write it down and keep it in a safe place*\
-`Your verification code is ` *write this down*\
-`Your emergency scratch codes are:` *write them also down and keep them in a safe place*
+Continuing, you will be presented a QR Code, a secret key, a verification code and multiple scratch codes (covered in the FAQ). *This is the important part. You will need to scan the QR code with your phone's TOTP app and you should write down the secret key and codes.*
 
-`Do you want me to update your "/common/home/harenber/.google_authenticator" file? (y/n)` **y**
+<pre>
+Your new secret key is: <i>this is your secret key. Write it down and keep it in a safe place</i>
+Your verification code is: <i>write this down</i>
+Your emergency scratch codes are: <i>write them also down and keep them in a safe place</i>
 
-`Do you want to disallow multiple uses of the same authentication`\
-`token? This restricts you to one login about every 30s, but it increases`\
-`your chances to notice or even prevent man-in-the-middle attacks (y/n)` **n**
+Do you want me to update your "/common/home/harenber/.google_authenticator" file? (y/n) <b>y</b>
+
+Do you want to disallow multiple uses of the same authentication
+token? This restricts you to one login about every 30s, but it increases
+your chances to notice or even prevent man-in-the-middle attacks (y/n) <b>n</b>
 
 
-`By default, a new token is generated every 30 seconds by the mobile app.`\
-`In order to compensate for possible time-skew between the client and the server,`\
-`we allow an extra token before and after the current time. This allows for a`\
-`time skew of up to 30 seconds between authentication server and client. If you`\
-`experience problems with poor time synchronization, you can increase the window`\
-`from its default size of 3 permitted codes (one previous code, the current`\
-`code, the next code) to 17 permitted codes (the 8 previous codes, the current`\
-`code, and the 8 next codes). This will permit for a time skew of up to 4 minutes`\
-`between client and server.`\
-`Do you want to do so? (y/n)` **n**
+By default, a new token is generated every 30 seconds by the mobile app.
+In order to compensate for possible time-skew between the client and the server,
+we allow an extra token before and after the current time. This allows for a
+time skew of up to 30 seconds between authentication server and client. If you
+experience problems with poor time synchronization, you can increase the window
+from its default size of 3 permitted codes (one previous code, the current
+code, the next code) to 17 permitted codes (the 8 previous codes, the current
+code, and the 8 next codes). This will permit for a time skew of up to 4 minutes
+between client and server.
+Do you want to do so? (y/n) <b>n</b>
 
-`If the computer that you are logging into isn't hardened against brute-force`\
-`login attempts, you can enable rate-limiting for the authentication module.`\
-`By default, this limits attackers to no more than 3 login attempts every 30s.`\
-`Do you want to enable rate-limiting? (y/n)` **n**
+If the computer that you are logging into isn't hardened against brute-force
+login attempts, you can enable rate-limiting for the authentication module.
+By default, this limits attackers to no more than 3 login attempts every 30s.
+Do you want to enable rate-limiting? (y/n) <b>n</b>
+</pre>
 
-> **Shortcut** If you're sick of answering each question one by one, here is the shortcut passing the right options to the command above: `google-authenticator -u -t  -D -f -W`
+> **Shortcut** If you're sick of answering each question one by one, here is the shortcut passing the right options to the command above: 
+<pre>
+[harenber@fugg2 ~]$ <b>google-authenticator -u -t  -D -f -W</b>
+</pre>
 
 > **ATTENTION WHEP USERS** You have two home directories: the NFS-based /common/home/*username* on top/higgs and /beegfs/*username* on the cluster nodes. Please configure TOTP on top/higgs and once you're finished with the step above, copy the file `.google_authenticator' to your /beegfs/*username* directory.
 
