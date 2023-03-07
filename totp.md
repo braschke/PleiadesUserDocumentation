@@ -104,11 +104,11 @@ Then you will be presented a QR Code. *This is the important part. You will need
 `By default, this limits attackers to no more than 3 login attempts every 30s.`\
 `Do you want to enable rate-limiting? (y/n)` **n**
 
-> **Shortcut** If you're sick of answering stupid questions, here is the shortcut to the command above: `google-authenticator -u -t  -D -f -W`
+> **Shortcut** If you're sick of answering each question one by one, here is the shortcut passing the right options to the command above: `google-authenticator -u -t  -D -f -W`
 
 > **ATTENTION WHEP USERS** You have two home directories: the NFS-based /common/home/*username* on top/higgs and /beegfs/*username* on the cluster nodes. Please configure TOTP on top/higgs and once you're finished with the step above, copy the file `.google_authenticator' to your /beegfs/*username* directory.
 
-## Step 3: inserting the secret key into your phone app
+### Step 3: inserting the secret key into your phone app
 
 This is the easiest step. Use the QR scan method of your app (in FreeOTP+ on the bottom right) and scan the QR code from your terminal. Done.
 
@@ -116,7 +116,7 @@ If that does not work, you may add the secret key by hand:
 
 [<img src="assets/img/freeotp_add_secret.png" alt="FreeOTP screenshot" width="300">](assets/img/freeotp_add_secret.png)
 
-## Step 4: enter the verfication code now every time you login
+### Step 4: enter the verfication code now every time you login
 
 When you login to any Pleiades login node, you will be asked now two questions:
 
@@ -131,9 +131,9 @@ When you login to any Pleiades login node, you will be asked now two questions:
 
 - What if I loose my phone / get a new phone?
 
-   If you've written down the secret, you can restore your TOTP on a different device. In addition, FreeOTP+ on Android allows you to export and import your secrets, 2FAS on iOS offers backup/restore in iCloud. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question)
+   If you've written down the secret, you can restore your TOTP on a different device. In addition, FreeOTP+ on Android allows you to export and import your secrets, 2FAS on iOS offers backup/restore in iCloud. In fact, it maskes sense to install a TOTP app on two devices in case you cannot use one. If you fear that you phone is compromized / stolen, you can reset TOTP (see next question).
 
-- I think my secret is compromized
+- I think my secret is compromized.
 
    You can reset TOTP by deleting `.google_authenticator` in your home directory and start again from step 2 above.
 
@@ -147,8 +147,8 @@ When you login to any Pleiades login node, you will be asked now two questions:
    
 - What are these `emergency scratch codes` that I should write down?
 
-   These codes *replace* a TOTP secret *once*. So if you cannot use TOTP for whatever reason, each of these codes will replace the TOTP secret. But once you use a code, this one gets invalid (that's why they are called *scratch codes*) 
+   These codes *replace* a TOTP secret *once*. So if you cannot use TOTP for whatever reason, each of these codes will replace the TOTP secret. But once you use a code, this one gets invalid (that's why they are called *scratch codes*). 
 
-- HELP! HELP! HELP! I locked myself out
+- HELP! HELP! HELP! I locked myself out!
 
    As usual, your friendly cluster admins are there to help. Just [send us a mail to create a ticket](mailto:pleiades@uni-wuppertal.de).
